@@ -7,19 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DFEDDF972686121B008D208D /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEDDF962686121B008D208D /* GameView.swift */; };
+		DFEDDF9926861231008D208D /* RouletteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEDDF9826861231008D208D /* RouletteViewModel.swift */; };
 		DFF0CC14267FAD1E0053711B /* ApexRouletteApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF0CC13267FAD1E0053711B /* ApexRouletteApp.swift */; };
 		DFF0CC16267FAD1E0053711B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF0CC15267FAD1E0053711B /* ContentView.swift */; };
 		DFF0CC18267FAD1F0053711B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFF0CC17267FAD1F0053711B /* Assets.xcassets */; };
 		DFF0CC1B267FAD1F0053711B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFF0CC1A267FAD1F0053711B /* Preview Assets.xcassets */; };
+		DFF0CC23267FAD3D0053711B /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF0CC22267FAD3D0053711B /* GameModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DFEDDF962686121B008D208D /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
+		DFEDDF9826861231008D208D /* RouletteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouletteViewModel.swift; sourceTree = "<group>"; };
 		DFF0CC10267FAD1E0053711B /* ApexRoulette.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ApexRoulette.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFF0CC13267FAD1E0053711B /* ApexRouletteApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApexRouletteApp.swift; sourceTree = "<group>"; };
 		DFF0CC15267FAD1E0053711B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		DFF0CC17267FAD1F0053711B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DFF0CC1A267FAD1F0053711B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DFF0CC1C267FAD1F0053711B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DFF0CC22267FAD3D0053711B /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,10 +58,10 @@
 		DFF0CC12267FAD1E0053711B /* ApexRoulette */ = {
 			isa = PBXGroup;
 			children = (
-				DFF0CC13267FAD1E0053711B /* ApexRouletteApp.swift */,
-				DFF0CC15267FAD1E0053711B /* ContentView.swift */,
-				DFF0CC17267FAD1F0053711B /* Assets.xcassets */,
-				DFF0CC1C267FAD1F0053711B /* Info.plist */,
+				DFF0CC24267FAD450053711B /* Model */,
+				DFF0CC25267FAD500053711B /* ViewModel */,
+				DFF0CC26267FAD5A0053711B /* Views */,
+				DFF0CC27267FAD690053711B /* Supporting Assets */,
 				DFF0CC19267FAD1F0053711B /* Preview Content */,
 			);
 			path = ApexRoulette;
@@ -67,6 +73,41 @@
 				DFF0CC1A267FAD1F0053711B /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		DFF0CC24267FAD450053711B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DFF0CC22267FAD3D0053711B /* GameModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DFF0CC25267FAD500053711B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				DFEDDF9826861231008D208D /* RouletteViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		DFF0CC26267FAD5A0053711B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DFF0CC15267FAD1E0053711B /* ContentView.swift */,
+				DFEDDF962686121B008D208D /* GameView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DFF0CC27267FAD690053711B /* Supporting Assets */ = {
+			isa = PBXGroup;
+			children = (
+				DFF0CC1C267FAD1F0053711B /* Info.plist */,
+				DFF0CC17267FAD1F0053711B /* Assets.xcassets */,
+				DFF0CC13267FAD1E0053711B /* ApexRouletteApp.swift */,
+			);
+			path = "Supporting Assets";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,7 +180,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				DFF0CC16267FAD1E0053711B /* ContentView.swift in Sources */,
+				DFEDDF9926861231008D208D /* RouletteViewModel.swift in Sources */,
 				DFF0CC14267FAD1E0053711B /* ApexRouletteApp.swift in Sources */,
+				DFEDDF972686121B008D208D /* GameView.swift in Sources */,
+				DFF0CC23267FAD3D0053711B /* GameModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,7 +315,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"ApexRoulette/Preview Content\"";
 				DEVELOPMENT_TEAM = JCL982F3T2;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = ApexRoulette/Info.plist;
+				INFOPLIST_FILE = "ApexRoulette/Supporting Assets/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -293,7 +337,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"ApexRoulette/Preview Content\"";
 				DEVELOPMENT_TEAM = JCL982F3T2;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = ApexRoulette/Info.plist;
+				INFOPLIST_FILE = "ApexRoulette/Supporting Assets/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
