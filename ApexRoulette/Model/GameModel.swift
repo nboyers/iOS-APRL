@@ -78,5 +78,4 @@ struct Gamemodel {
                                  "Fragment E" , "Harvester" , "Fragment W" , "Countdown" , "Thermal Station" ,
                                  "Launch Site" , "The Dome" , "Lava City" , "Sorting Factory" , "Staging" ,
                                  "The Geyser" , "Your Choice" , "Train Yard" , "Lava Fissure"]
-    
 }
