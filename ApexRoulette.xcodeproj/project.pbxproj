@@ -45,14 +45,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		DF05DCB026865E0E00443412 /* fonts */ = {
+		DF05DCB026865E0E00443412 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
 				DF05DCAC26865DE000443412 /* blocktastic_itl.otf */,
 				DF05DCAB26865DE000443412 /* blocktastic.otf */,
 				DF05DCAA26865DE000443412 /* duke_fill.otf */,
 			);
-			path = fonts;
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		DFF0CC07267FAD1E0053711B = {
@@ -74,7 +74,7 @@
 		DFF0CC12267FAD1E0053711B /* ApexRoulette */ = {
 			isa = PBXGroup;
 			children = (
-				DF05DCB026865E0E00443412 /* fonts */,
+				DF05DCB026865E0E00443412 /* Fonts */,
 				DFF0CC24267FAD450053711B /* Model */,
 				DFF0CC25267FAD500053711B /* ViewModel */,
 				DFF0CC26267FAD5A0053711B /* Views */,
