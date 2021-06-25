@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DF05DCAD26865DE000443412 /* duke_fill.otf in Resources */ = {isa = PBXBuildFile; fileRef = DF05DCAA26865DE000443412 /* duke_fill.otf */; };
+		DF05DCAE26865DE000443412 /* blocktastic.otf in Resources */ = {isa = PBXBuildFile; fileRef = DF05DCAB26865DE000443412 /* blocktastic.otf */; };
+		DF05DCAF26865DE000443412 /* blocktastic_itl.otf in Resources */ = {isa = PBXBuildFile; fileRef = DF05DCAC26865DE000443412 /* blocktastic_itl.otf */; };
 		DFEDDF972686121B008D208D /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEDDF962686121B008D208D /* GameView.swift */; };
 		DFEDDF9926861231008D208D /* RouletteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEDDF9826861231008D208D /* RouletteViewModel.swift */; };
 		DFF0CC14267FAD1E0053711B /* ApexRouletteApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF0CC13267FAD1E0053711B /* ApexRouletteApp.swift */; };
@@ -17,6 +20,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DF05DCAA26865DE000443412 /* duke_fill.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = duke_fill.otf; sourceTree = "<group>"; };
+		DF05DCAB26865DE000443412 /* blocktastic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = blocktastic.otf; sourceTree = "<group>"; };
+		DF05DCAC26865DE000443412 /* blocktastic_itl.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = blocktastic_itl.otf; sourceTree = "<group>"; };
 		DFEDDF962686121B008D208D /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		DFEDDF9826861231008D208D /* RouletteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouletteViewModel.swift; sourceTree = "<group>"; };
 		DFF0CC10267FAD1E0053711B /* ApexRoulette.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ApexRoulette.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -39,6 +45,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DF05DCB026865E0E00443412 /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				DF05DCAC26865DE000443412 /* blocktastic_itl.otf */,
+				DF05DCAB26865DE000443412 /* blocktastic.otf */,
+				DF05DCAA26865DE000443412 /* duke_fill.otf */,
+			);
+			path = fonts;
+			sourceTree = "<group>";
+		};
 		DFF0CC07267FAD1E0053711B = {
 			isa = PBXGroup;
 			children = (
@@ -58,6 +74,7 @@
 		DFF0CC12267FAD1E0053711B /* ApexRoulette */ = {
 			isa = PBXGroup;
 			children = (
+				DF05DCB026865E0E00443412 /* fonts */,
 				DFF0CC24267FAD450053711B /* Model */,
 				DFF0CC25267FAD500053711B /* ViewModel */,
 				DFF0CC26267FAD5A0053711B /* Views */,
@@ -168,7 +185,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				DFF0CC1B267FAD1F0053711B /* Preview Assets.xcassets in Resources */,
+				DF05DCAE26865DE000443412 /* blocktastic.otf in Resources */,
 				DFF0CC18267FAD1F0053711B /* Assets.xcassets in Resources */,
+				DF05DCAF26865DE000443412 /* blocktastic_itl.otf in Resources */,
+				DF05DCAD26865DE000443412 /* duke_fill.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

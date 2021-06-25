@@ -11,7 +11,7 @@ import SwiftUI
 struct ApexRouletteApp: App {
     var body: some Scene {
         WindowGroup {
-            GameView(test: true)
+            GameView(weapon: true, meds: true,drop: true,gear: true, legend: true,special: true)
         }
     }
 }

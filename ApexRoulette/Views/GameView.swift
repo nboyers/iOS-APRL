@@ -8,34 +8,46 @@
 import SwiftUI
 
 struct GameView: View {
-    @State var test: Bool
+    
+
+    @State var weapon: Bool = true
+    @State var meds: Bool = true
+    @State var drop: Bool = true
+    @State var gear: Bool = true
+    @State var legend: Bool = true
+    @State var special: Bool = true
+    @State var duo: Bool = true
+
+    
     var body: some View {
         VStack {
             Group{
-                Toggle("WEAPONS", isOn: $test)
+                Toggle("WEAPONS", isOn: $weapon)
                     .foregroundColor(.white)
-                Text("FIXEME").foregroundColor(.white)
+                
+                Text("FIXME")
+                    .foregroundColor(.white)
                     .foregroundColor(.white)
 
-                Toggle("MEDICALS", isOn: $test)
+                Toggle("MEDICALS", isOn: $meds)
                     .foregroundColor(.white)
                 Text("FIXEME").foregroundColor(.white)
                     .foregroundColor(.white)
-                Toggle("DROPZONE", isOn: $test)
+                Toggle("DROPZONE", isOn: $drop)
                     .foregroundColor(.white)
                 Text("FIXEME").foregroundColor(.white)
             }
+            
             Group {
-                
-                Toggle("GEAR", isOn: $test)
+                Toggle("GEAR", isOn: $gear)
                     .foregroundColor(.white)
                 Text("FIXEME").foregroundColor(.white)
                
-                Toggle("LEGENDS", isOn: $test)
+                Toggle("LEGENDS", isOn: $legend)
                     .foregroundColor(.white)
                 Text("FIXEME").foregroundColor(.white)
               
-                Toggle("SPECIALS", isOn: $test)
+                Toggle("SPECIALS", isOn: $special)
                     .foregroundColor(.white)
                 Text("FIXEME").foregroundColor(.white)
                 Spacer().frame(height: 70)
@@ -63,7 +75,6 @@ struct GameView: View {
             Spacer()
             
             
-            
         }.background(Image("game_view")
                         .resizable()
                         .edgesIgnoringSafeArea(.all)
@@ -74,6 +85,6 @@ struct GameView: View {
 struct GameView_Previews: PreviewProvider {
     //   var test = true
     static var previews: some View {
-        GameView(test: true)
+        GameView(weapon: true, meds: true,drop: true,gear: true, legend: true,special: true)
     }
 }

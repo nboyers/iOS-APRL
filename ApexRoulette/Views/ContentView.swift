@@ -8,41 +8,36 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var duos: Bool = false
     
     var body: some View {
+       NavigationView {
         VStack {
-            Text("Map Selection")
-                .font(.system(size: 50))
-                .fontWeight(.bold)
-                .foregroundColor(.white)
-            
-            Spacer()
-            Spacer().frame(height: 300)
-            Button(action: {
-                //TODO: Add logic later
-            }, label: {
-                Text("OLYMPUS")
-            }).padding(.horizontal, 60)
-            .padding(.vertical,10)
-            .foregroundColor(.white)
-            .background(Color.red)
-            
-            Spacer().frame(height: 30)
-            
-            Button(action: {
-                //TODO: Add logic later
-            }, label: {
-                Text("WORLD'S EDGE")
-            }).padding(.horizontal, 60)
-            .padding(.vertical,10)
-            .foregroundColor(.white)
-            .background(Color.red)
-            Spacer()
-            
-        }.background(Image("main_menu")
-                        .resizable()
-                        .edgesIgnoringSafeArea(.all)
-                        .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
+                Spacer().frame(height: 20)
+                TitleCard().navigationBarTitle("")
+                    .navigationBarHidden(true)
+                
+                Spacer().frame(height: 400)
+                OlympusButton().navigationBarTitle("")
+                    .navigationBarHidden(true)
+                
+                Spacer().frame(height: 20)
+                World_EdgeButton()
+                    .navigationBarTitle("")
+                    .navigationBarHidden(true)
+                
+                Spacer().frame(height: 20)
+                
+                DuosButton(duo: duos)
+                    .navigationBarTitle("")
+                    .navigationBarHidden(true)
+                
+                Spacer()
+            }.background(Image("main_menu")
+                            .resizable()
+                            .edgesIgnoringSafeArea(.all)
+                            .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
+        }
     }
 }
 
@@ -50,5 +45,64 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+    }
+}
+
+struct OlympusButton: View {
+    var body: some View {
+        Button(action: {
+            //TODO: Add logic later
+        }, label: {
+            Text("OLYMPUS")
+        })
+        .frame(minWidth: 0, maxWidth: 200)
+        .font(Font.custom("blocktastic", size: 30))
+        .padding()
+        .foregroundColor(.white)
+        .overlay(
+            RoundedRectangle(cornerRadius: 25)
+                .stroke(Color.white, lineWidth: 3)
+        )
+    }
+}
+
+struct World_EdgeButton: View {
+    var body: some View {
+        Button(action: {
+            //TODO: Add logic later
+        }, label: {
+            Text("WORLD'S EDGE")
+        })
+        .frame(minWidth: 0, maxWidth: 200)
+        .font(Font.custom("blocktastic", size: 30))
+        .padding()
+        .foregroundColor(.white)
+        .overlay(
+            RoundedRectangle(cornerRadius: 25)
+                .stroke(Color.white, lineWidth: 3)
+        )
+    }
+}
+
+struct DuosButton: View {
+    @State var duo: Bool
+    var body: some View {
+        Toggle("Duos", isOn: $duo)
+            .frame(minWidth: 0, maxWidth: 200, maxHeight: 18)
+            .font(Font.custom("blocktastic", size: 30))
+            .padding()
+            .foregroundColor(.white)
+            .overlay(
+                RoundedRectangle(cornerRadius: 25)
+                    .stroke(Color.white, lineWidth: 3))
+    }
+}
+
+struct TitleCard: View {
+    var body: some View {
+        Text("Map Selection")
+            .font(Font.custom("blocktastic", size: 50))
+            .fontWeight(.bold)
+            .foregroundColor(.white)
     }
 }
