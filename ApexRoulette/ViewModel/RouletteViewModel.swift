@@ -47,57 +47,61 @@ public class RouletteViewModel : ObservableObject {
     }
     
     func startGame() {
-        if dropZone {
-            switch(mapChoice){
-            case "Olympus":
-                mapChoice = getRandom(array: model.OLYMPUS)
-                break;
-                
-            case "Worlds Edge":
-                mapChoice = getRandom(array: model.WORLDS_EDGE)
-                break;
-            default:
-                mapChoice = ""
-            }
-        }
         
-        if weapon {
-            weaponsString = getRandom(array: model.WEAPONS)
-        } else {
-            weaponsString = ""
-        }
-        
-        if medicals {
-            medString = getRandom(array: model.MEDICALS)
-        } else {
-            medString = ""
-        }
-        
-        if gear {
-            gearString = getRandom(array: model.GEAR)
-        } else {
-            gearString = ""
-        }
-        if legend {
+        DispatchQueue.main.async { [self] in
             
-            var firstPos: String = getRandom(array: model.LEGENDS)
-            var secPos: String = getRandom(array: model.LEGENDS)
-            var thirdPos: String = getRandom(array: model.LEGENDS)
-            
-            while(firstPos == secPos || firstPos == thirdPos || secPos == thirdPos) {
-                firstPos = getRandom(array: model.LEGENDS)
-                secPos = getRandom(array: model.LEGENDS)
-                thirdPos = getRandom(array: model.LEGENDS)
+            if dropZone {
+                switch(mapChoice){
+                case "Olympus":
+                    mapChoice = getRandom(array: model.OLYMPUS)
+                    break;
+                    
+                case "Worlds Edge":
+                    mapChoice = getRandom(array: model.WORLDS_EDGE)
+                    break;
+                default:
+                    mapChoice = ""
+                }
             }
-            if duos {
-                characterArray = [firstPos,secPos]
+            
+            if weapon {
+                weaponsString = getRandom(array: model.WEAPONS)
             } else {
-                characterArray = [firstPos,secPos,thirdPos]
-            }     
-        }
-        
-        if specials {
-            specialString = getRandom(array: model.SPECIAL)
+                weaponsString = ""
+            }
+            
+            if medicals {
+                medString = getRandom(array: model.MEDICALS)
+            } else {
+                medString = ""
+            }
+            
+            if gear {
+                gearString = getRandom(array: model.GEAR)
+            } else {
+                gearString = ""
+            }
+            if legend {
+                
+                var firstPos: String = getRandom(array: model.LEGENDS)
+                var secPos: String = getRandom(array: model.LEGENDS)
+                var thirdPos: String = getRandom(array: model.LEGENDS)
+                
+                while(firstPos == secPos || firstPos == thirdPos || secPos == thirdPos) {
+                    firstPos = getRandom(array: model.LEGENDS)
+                    secPos = getRandom(array: model.LEGENDS)
+                    thirdPos = getRandom(array: model.LEGENDS)
+                }
+                if duos {
+                    characterArray = [firstPos,secPos]
+                } else {
+                    characterArray = [firstPos,secPos,thirdPos]
+                }
+            }
+            
+            if specials {
+                specialString = getRandom(array: model.SPECIAL)
+            }
         }
         
     }
