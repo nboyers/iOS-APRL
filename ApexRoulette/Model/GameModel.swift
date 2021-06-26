@@ -36,7 +36,7 @@ struct Gamemodel {
     let SPECIAL:[String] = ["Bloodthirsty. You cannot heal until you kill.",
                             "Sole Survivor. Everyone in the squad must solo queue.",
                             "Time's Up! Jumpmaster lands somewhere else to others. " +
-                                "If the Jumpmaster dies before the meetup, or after 5 minutes, all must die! ",
+                                "If the Jumpmaster dies before the meetup, all must die! ",
                             "I am exasta.esl.elastic, I'm great!",
                             "Jump Off the Map! Teammates must jump separate across the map.",
                             "Boxing Match. You must drop your weapons, throw hands and punch the final squad to death.",
@@ -56,9 +56,8 @@ struct Gamemodel {
                             "Never revive teammates","Only loot houses from the 2nd floor and up",
                             "Jump out of the plane as soon as possible and only head East. " +
                                 "Land as far east as you can possibly get",
-                            "Sports caster. You can loot as normal, but then you must find a team and " +
-                                "follow them around for as long as possible without being seen and sports cast " +
-                                "what they do. If they are killed you must follow the team who killed them",
+                            "Loot as normal, but then you must find a team and " +
+                                "follow them around for as long as possible and sports cast ",
                             "Only use the first weapon you find during the game.",
                             "Act as if your abilities don't exist.",
                             "Keep moving! You are not allowed to stop moving at any point in time.",
