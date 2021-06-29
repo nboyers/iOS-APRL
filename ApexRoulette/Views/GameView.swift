@@ -7,26 +7,31 @@
 
 import SwiftUI
 
+
 struct GameView: View {
     
+    @ObservedObject var viewModel = RouletteViewModel() // Sends the info back to the view
     
-    @State var weapon: Bool = true
-    @State var meds: Bool = true
-    @State var drop: Bool = true
-    @State var gear: Bool = true
-    @State var legend: Bool = true
-    @State var special: Bool = true
-    @State var duo: Bool = false
+    @State private var weapon: Bool = true
+    @State private var meds: Bool = true
+    @State private var location: Bool = true  // LOCATION ON THE MAP
+    @State private var gear: Bool = true
+    @State private var legend: Bool = true
+    @State private var special: Bool = true
+
     
-    @ObservedObject var viewModel: RouletteViewModel
+    //NEED TO PASS THE MAP AND THE DUOS TO THE VIEWMODEL
+    
     
     var body: some View {
         GeometryReader { geometry in
             VStack {
+                
                 Group {
                     Toggle("WEAPONS", isOn: $weapon)
                         .foregroundColor(.white)
                         .navigationBarTitle("")
+                        .navigationBarHidden(true)
                     
                     Text(viewModel.weaponsString)
                         .foregroundColor(.white)
@@ -34,23 +39,26 @@ struct GameView: View {
                     Toggle("MEDICALS", isOn: $meds)
                         .foregroundColor(.white)
                     
-                    Text(viewModel.medString).foregroundColor(.white)
+                    Text(viewModel.medString)
                         .foregroundColor(.white)
                     
-                    Toggle("DROPZONE", isOn: $drop)
+                    Toggle("DROPZONE", isOn: $location) //for the map
                         .foregroundColor(.white)
                     
                     Text(viewModel.dropZoneString)
                         .foregroundColor(.white)
+                    
                 }.fixedSize(horizontal: false, vertical: true)
+                
                 
                 Group {
                     Toggle("GEAR", isOn: $gear)
                         .foregroundColor(.white)
                     
-                    Text(viewModel.gearString).foregroundColor(.white)
+                    Text(viewModel.gearString)
+                        .foregroundColor(.white)
                     
-                    Toggle("LEGENDS", isOn: $legend)
+                    Toggle("LEGENDS", isOn: $legend) // FOR DUOS
                         .foregroundColor(.white)
                     
                     ForEach(viewModel.characterArray, id: \.self) { legend in
@@ -63,36 +71,9 @@ struct GameView: View {
                     Text(viewModel.specialString)
                         .foregroundColor(.white)
                     
-                    //  Spacer().frame(height: 70)
                 }.fixedSize(horizontal: false, vertical: true)
                 
-                Button(action: {
-                    viewModel.resetButton()
-                }, label: {
-                    Text("RESET")
-                }).frame(minWidth: 0, maxWidth: 200)
-                .font(Font.custom("blocktastic", size: 30))
-                .padding()
-                .foregroundColor(.white)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 25)
-                        .stroke(Color.white, lineWidth: 3))
-                
-                Spacer().frame(height: 30)
-                
-                
-                Button(action: {
-                    viewModel.startGame()
-                }, label: {
-                    Text("RANDOMIZER")
-                }).frame(minWidth: 0, maxWidth: 200)
-                .font(Font.custom("blocktastic", size: 30))
-                .padding()
-                .foregroundColor(.white)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 25)
-                        .stroke(Color.white, lineWidth: 3))
-                Spacer()
+                ButtonsGroup(viewModel: viewModel)
             }
             .background(Image("game_view")
                             .resizable()
@@ -101,3 +82,39 @@ struct GameView: View {
     }
 }
 
+
+struct ButtonsGroup: View {
+    @ObservedObject var viewModel: RouletteViewModel
+    
+    var body: some View {
+        Group {
+            Button(action: {
+                viewModel.resetButton()
+            }, label: {
+                Text("RESET")
+            }).frame(minWidth: 0, maxWidth: 150)
+            .font(Font.custom("blocktastic", size: 30))
+            .padding()
+            .foregroundColor(.white)
+            .overlay(
+                RoundedRectangle(cornerRadius: 25)
+                    .stroke(Color.white, lineWidth: 3))
+            
+            Spacer().frame(height: 30)
+            
+            
+            Button(action: {
+                viewModel.startGame()
+            }, label: {
+                Text("RANDOMIZER")
+            }).frame(minWidth: 0, maxWidth: 150)
+            .font(Font.custom("blocktastic", size: 30))
+            .padding()
+            .foregroundColor(.white)
+            .overlay(
+                RoundedRectangle(cornerRadius: 25)
+                    .stroke(Color.white, lineWidth: 3))
+            Spacer()
+        }
+    }
+}

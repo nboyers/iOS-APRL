@@ -8,8 +8,7 @@
 import SwiftUI
 
 class UserInput: ObservableObject {
-    @Published var map: Int = 0
-    @Published var duo: Bool = false
+   var duo: Bool = false
 }
 
 
@@ -49,23 +48,13 @@ struct ContentView: View {
     }
 }
 
-//#if DEBUG
-//struct ContentView_Previews: PreviewProvider {
-//
-//
-//    static var previews: some View {
-//
-//        ContentView(duo: <#Binding<Bool>#>)
-//    }
-//}
-//#endif
 
 struct OlympusButton: View {
     
     @ObservedObject var input = UserInput()
     
     var body: some View {
-        NavigationLink(destination: GameView(viewModel: RouletteViewModel(MAP: 1, WEAPONS: true, DROPZONE: true, MEDS: true, GEAR: true, LEGENDS: true, SPECIALS: true, DUOS: self.input.duo))) {
+        NavigationLink(destination: GameView(viewModel: RouletteViewModel(MAP: "OLYMPUS", DUOS: self.input.duo))) {
             Text("OLYMPUS")
         } .frame(minWidth: 0, maxWidth: 200)
         .font(Font.custom("blocktastic", size: 30))
@@ -80,7 +69,7 @@ struct OlympusButton: View {
 struct World_EdgeButton: View {
     @ObservedObject var input = UserInput()
     var body: some View {
-        NavigationLink(destination: GameView(viewModel: RouletteViewModel(MAP: 2, WEAPONS: true, DROPZONE: true, MEDS: true, GEAR: true, LEGENDS: true, SPECIALS: true, DUOS: self.input.duo))) {
+        NavigationLink(destination:GameView(viewModel: RouletteViewModel(MAP: "WORLD'S EDGE", DUOS: self.input.duo))) {
             Text("WORLD'S EDGE")
         }
         .frame(minWidth: 0, maxWidth: 200)

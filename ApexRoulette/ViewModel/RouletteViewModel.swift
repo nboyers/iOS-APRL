@@ -8,19 +8,20 @@
 import Foundation
 import Combine
 
-
 public class RouletteViewModel : ObservableObject  {
     // Plays into what map is chosen
-    var mapChoice: Int
+    var mapChoice: String = ""
+    var duos: Bool = true
     
     //SWITCHES
-    var weapon: Bool
-    var dropZone:Bool
-    var medicals: Bool
-    var gear: Bool
-    var legend: Bool
-    var specials: Bool
-    var duos: Bool
+    var weapon: Bool = true
+    var location:Bool  = true
+    var medicals: Bool = true
+    var gear: Bool = true
+    var legend: Bool = true
+    var specials: Bool = true
+    
+    
     
     //Random Results
     private var characterString: String = " "
@@ -34,27 +35,21 @@ public class RouletteViewModel : ObservableObject  {
     //Model Call
     let model: Gamemodel = Gamemodel()
     
+    init(){}
     
-    init(MAP: Int, WEAPONS: Bool, DROPZONE: Bool, MEDS: Bool,
-         GEAR: Bool, LEGENDS: Bool, SPECIALS: Bool, DUOS: Bool) {
-        weapon = WEAPONS
-        dropZone = DROPZONE
-        medicals = MEDS
-        gear = GEAR
-        legend = LEGENDS
-        specials = SPECIALS
-        duos = DUOS
+    init(MAP: String, DUOS: Bool) {
         mapChoice = MAP
+        duos = DUOS
     }
     
     func startGame() {
-        if dropZone {
+        if location {
             switch(mapChoice){
-            case 1:
+            case "OLYMPUS":
                 dropZoneString = getRandom(array: model.OLYMPUS)
                 break;
                 
-            case 2:
+            case "WORLD'S EDGE":
                 dropZoneString = getRandom(array: model.WORLDS_EDGE)
                 break;
             default:
@@ -115,5 +110,12 @@ public class RouletteViewModel : ObservableObject  {
         gearString = ""
         specialString = ""
         characterArray =  []
+        weapon = true
+        location  = true
+        medicals = true
+        gear = true
+        legend = true
+        specials = true
+        duos = true
     }
 }
