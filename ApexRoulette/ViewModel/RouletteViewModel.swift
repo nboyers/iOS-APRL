@@ -24,8 +24,8 @@ public class RouletteViewModel : ObservableObject  {
     
     
     //Random Results
-    private var characterString: String = " "
-    @Published var weaponsString: String = " "
+    private var characterString: String = ""
+    @Published var weaponsString: String = ""
     @Published var dropZoneString: String = ""
     @Published var medString: String = ""
     @Published var gearString: String = ""
@@ -37,9 +37,8 @@ public class RouletteViewModel : ObservableObject  {
     
     init(){}
     
-    init(MAP: String, DUOS: Bool) {
+    init(MAP: String) {
         mapChoice = MAP
-        duos = DUOS
     }
     
     func startGame() {
@@ -102,7 +101,6 @@ public class RouletteViewModel : ObservableObject  {
     private func getRandom( array: [String] )-> String {
         return array.randomElement()!
     }
-    
     func resetButton() {
         weaponsString  = ""
         dropZoneString = ""
@@ -110,12 +108,5 @@ public class RouletteViewModel : ObservableObject  {
         gearString = ""
         specialString = ""
         characterArray =  []
-        weapon = true
-        location  = true
-        medicals = true
-        gear = true
-        legend = true
-        specials = true
-        duos = true
     }
 }
