@@ -11,7 +11,7 @@ import Combine
 public class RouletteViewModel : ObservableObject  {
     // Plays into what map is chosen
     var mapChoice: String = ""
-    var duos: Bool = true
+    var duos: Bool = false
     
     //SWITCHES
     var weapon: Bool = true
@@ -35,8 +35,7 @@ public class RouletteViewModel : ObservableObject  {
     //Model Call
     let model: Gamemodel = Gamemodel()
     
-    init(){}
-    
+    init (){}
     init(MAP: String) {
         mapChoice = MAP
     }

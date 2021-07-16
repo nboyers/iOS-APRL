@@ -46,7 +46,7 @@ struct ContentView: View {
     
     struct OlympusButton: View {
         var body: some View {
-            NavigationLink(destination: GameView()) {
+            NavigationLink(destination: GameView(viewModel: RouletteViewModel.init(MAP: "OLYMPUS"))) {
                         Text("OLYMPUS")
                     }.navigationBarTitle("")
                     .navigationBarHidden(true)
@@ -57,14 +57,14 @@ struct ContentView: View {
                     .overlay(
                         RoundedRectangle(cornerRadius: 25)
                             .stroke(Color.white, lineWidth: 3))
-            .navigationBarTitle("Back")
+            .navigationBarTitleDisplayMode(.automatic)
         }
     }
     
     struct World_EdgeButton: View {
         var body: some View {
           
-            NavigationLink(destination: GameView()) {
+            NavigationLink(destination: GameView(viewModel: RouletteViewModel.init(MAP: "WORLD'S EDGE"))) {
                         Text("WORLD'S EDGE")
                     }.navigationBarTitle("")
                     .navigationBarHidden(true)
