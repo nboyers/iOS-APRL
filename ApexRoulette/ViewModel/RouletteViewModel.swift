@@ -14,12 +14,12 @@ public class RouletteViewModel : ObservableObject  {
     var duos: Bool = false
     
     //SWITCHES
-    var weapon: Bool = true
-    var location:Bool  = true
-    var medicals: Bool = true
-    var gear: Bool = true
-    var legend: Bool = true
-    var specials: Bool = true
+    var weaponSwitch: Bool = true
+    var locationSwitch:Bool  = true
+    var medicalsSwitch: Bool = true
+    var gearSwitch: Bool = true
+    var legendSwitch: Bool = true
+    var specialsSwitch: Bool = true
     
     
     
@@ -41,7 +41,8 @@ public class RouletteViewModel : ObservableObject  {
     }
     
     func startGame() {
-        if location {
+        
+        if locationSwitch {
             switch(mapChoice){
             case "OLYMPUS":
                 dropZoneString = getRandom(array: model.OLYMPUS)
@@ -53,27 +54,29 @@ public class RouletteViewModel : ObservableObject  {
             default:
                 dropZoneString = ""
             }
+        } else {
+            dropZoneString = ""
         }
         
-        if weapon {
+        if weaponSwitch {
             weaponsString = getRandom(array: model.WEAPONS)
         } else {
             weaponsString = ""
         }
         
-        if medicals {
+        if medicalsSwitch {
             medString = getRandom(array: model.MEDICALS)
         } else {
             medString = ""
         }
         
-        if gear {
+        if gearSwitch {
             gearString = getRandom(array: model.GEAR)
         } else {
             gearString = ""
         }
         
-        if legend {
+        if legendSwitch {
             
             var firstPos: String = getRandom(array: model.LEGENDS)
             var secPos: String = getRandom(array: model.LEGENDS)
@@ -89,10 +92,14 @@ public class RouletteViewModel : ObservableObject  {
             } else {
                 characterArray = [firstPos,secPos,thirdPos]
             }
+        } else {
+           characterArray = []
         }
         
-        if specials {
+        if specialsSwitch {
             specialString = getRandom(array: model.SPECIAL)
+        } else {
+            specialString = ""
         }
         
     }
@@ -107,5 +114,12 @@ public class RouletteViewModel : ObservableObject  {
         gearString = ""
         specialString = ""
         characterArray =  []
+        weaponSwitch = true
+        locationSwitch = true
+        medicalsSwitch = true
+        gearSwitch = true
+        legendSwitch = true
+        specialsSwitch = true
+        
     }
 }

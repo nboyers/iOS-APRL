@@ -10,24 +10,14 @@ import SwiftUI
 
 struct GameView: View {
     
-    @ObservedObject var viewModel = RouletteViewModel() // Sends the info back to the view
-    
-    
-    
-    @State private var weapon: Bool = true
-    @State private var meds: Bool = true
-    @State private var location: Bool = true
-    @State private var gear: Bool = true
-    @State private var legend: Bool = true
-    @State private var special: Bool = true
-    
+    @ObservedObject var viewModel = RouletteViewModel() 
     
     var body: some View {
         
         VStack {
             
             Group {
-                Toggle("WEAPONS", isOn: $weapon)
+                Toggle("WEAPONS", isOn: $viewModel.weaponSwitch)
                     .foregroundColor(.white)
                     .padding()
                 
@@ -36,7 +26,7 @@ struct GameView: View {
                     .foregroundColor(.white)
                     .frame(height: 10)
                 
-                Toggle("MEDICALS", isOn: $meds)
+                Toggle("MEDICALS", isOn: $viewModel.medicalsSwitch)
                     .foregroundColor(.white)
                     .padding()
                 
@@ -44,7 +34,7 @@ struct GameView: View {
                     .foregroundColor(.white)
                     .frame(height: 10)
                 
-                Toggle("DROPZONE", isOn: $location) //for the map
+                Toggle("DROPZONE", isOn: $viewModel.locationSwitch) //for the map
                     .foregroundColor(.white)
                     .padding()
                 
@@ -56,7 +46,7 @@ struct GameView: View {
             
             
             Group {
-                Toggle("GEAR", isOn: $gear)
+                Toggle("GEAR", isOn: $viewModel.gearSwitch)
                     .foregroundColor(.white)
                     .padding()
                 
@@ -64,7 +54,7 @@ struct GameView: View {
                     .foregroundColor(.white)
                     .fixedSize(horizontal: false, vertical: true)
                 
-                Toggle("LEGENDS", isOn: $legend) // FOR DUOS
+                Toggle("LEGENDS", isOn: $viewModel.legendSwitch) 
                     .foregroundColor(.white)
                     .padding()
                 
@@ -74,7 +64,7 @@ struct GameView: View {
                     .fixedSize(horizontal: true, vertical: true)
                 }.foregroundColor(.white)
                 
-                Toggle("SPECIALS", isOn: $special)
+                Toggle("SPECIALS", isOn: $viewModel.specialsSwitch)
                     .foregroundColor(.white)
                     .padding()
 
@@ -102,6 +92,7 @@ struct ButtonsGroup: View {
     
     var body: some View {
         Group {
+            
             Button(action: {
                 viewModel.resetButton()
                 
@@ -132,6 +123,7 @@ struct ButtonsGroup: View {
                 RoundedRectangle(cornerRadius: 25)
                     .stroke(Color.white, lineWidth: 3))
             Spacer()
+           
         }
     }
 }

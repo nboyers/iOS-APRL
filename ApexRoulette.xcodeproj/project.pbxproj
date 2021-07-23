@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE0AD41CB075376DA389A20D /* Pods_ApexRoulette.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85469BDEC50BB4F935D14ABD /* Pods_ApexRoulette.framework */; };
 		DF05DCAD26865DE000443412 /* duke_fill.otf in Resources */ = {isa = PBXBuildFile; fileRef = DF05DCAA26865DE000443412 /* duke_fill.otf */; };
 		DF05DCAE26865DE000443412 /* blocktastic.otf in Resources */ = {isa = PBXBuildFile; fileRef = DF05DCAB26865DE000443412 /* blocktastic.otf */; };
 		DF05DCAF26865DE000443412 /* blocktastic_itl.otf in Resources */ = {isa = PBXBuildFile; fileRef = DF05DCAC26865DE000443412 /* blocktastic_itl.otf */; };
@@ -20,6 +21,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0B77B34799660E15DCD3C482 /* Pods-ApexRoulette.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApexRoulette.release.xcconfig"; path = "Target Support Files/Pods-ApexRoulette/Pods-ApexRoulette.release.xcconfig"; sourceTree = "<group>"; };
+		812440E7973D2DEBB015974E /* Pods-ApexRoulette.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApexRoulette.debug.xcconfig"; path = "Target Support Files/Pods-ApexRoulette/Pods-ApexRoulette.debug.xcconfig"; sourceTree = "<group>"; };
+		85469BDEC50BB4F935D14ABD /* Pods_ApexRoulette.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ApexRoulette.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DF05DCAA26865DE000443412 /* duke_fill.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = duke_fill.otf; sourceTree = "<group>"; };
 		DF05DCAB26865DE000443412 /* blocktastic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = blocktastic.otf; sourceTree = "<group>"; };
 		DF05DCAC26865DE000443412 /* blocktastic_itl.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = blocktastic_itl.otf; sourceTree = "<group>"; };
@@ -39,12 +43,31 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE0AD41CB075376DA389A20D /* Pods_ApexRoulette.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1850BAFA119220B1C3B06E29 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				85469BDEC50BB4F935D14ABD /* Pods_ApexRoulette.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BB25B238B74F3F6243FAEA29 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				812440E7973D2DEBB015974E /* Pods-ApexRoulette.debug.xcconfig */,
+				0B77B34799660E15DCD3C482 /* Pods-ApexRoulette.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		DF05DCB026865E0E00443412 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
@@ -60,6 +83,8 @@
 			children = (
 				DFF0CC12267FAD1E0053711B /* ApexRoulette */,
 				DFF0CC11267FAD1E0053711B /* Products */,
+				BB25B238B74F3F6243FAEA29 /* Pods */,
+				1850BAFA119220B1C3B06E29 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -134,9 +159,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = DFF0CC1F267FAD1F0053711B /* Build configuration list for PBXNativeTarget "ApexRoulette" */;
 			buildPhases = (
+				14E4F6AF8E252D5B2D2B4249 /* [CP] Check Pods Manifest.lock */,
 				DFF0CC0C267FAD1E0053711B /* Sources */,
 				DFF0CC0D267FAD1E0053711B /* Frameworks */,
 				DFF0CC0E267FAD1E0053711B /* Resources */,
+				4BC06126673306867C34B2B4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -193,6 +220,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		14E4F6AF8E252D5B2D2B4249 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ApexRoulette-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4BC06126673306867C34B2B4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ApexRoulette/Pods-ApexRoulette-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ApexRoulette/Pods-ApexRoulette-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ApexRoulette/Pods-ApexRoulette-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DFF0CC0C267FAD1E0053711B /* Sources */ = {
@@ -328,6 +397,7 @@
 		};
 		DFF0CC20267FAD1F0053711B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 812440E7973D2DEBB015974E /* Pods-ApexRoulette.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -350,6 +420,7 @@
 		};
 		DFF0CC21267FAD1F0053711B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0B77B34799660E15DCD3C482 /* Pods-ApexRoulette.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
