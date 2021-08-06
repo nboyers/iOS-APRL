@@ -117,7 +117,7 @@ public class RouletteViewModel : ObservableObject  {
         medString = ""
         gearString = ""
         specialString = ""
-        characterArray =  []
+        legendString = ""
         weaponSwitch = true
         locationSwitch = true
         medicalsSwitch = true
