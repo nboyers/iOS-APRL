@@ -11,6 +11,7 @@ import SwiftUI
 struct GameView: View {
     
     @ObservedObject var viewModel = RouletteViewModel() 
+   // var interstitial:Interstitial
     
     var body: some View {
         
@@ -52,17 +53,17 @@ struct GameView: View {
                 
                 Text(viewModel.gearString)
                     .foregroundColor(.white)
+                    .frame(height: 10)
                     .fixedSize(horizontal: false, vertical: true)
                 
                 Toggle("LEGENDS", isOn: $viewModel.legendSwitch) 
                     .foregroundColor(.white)
                     .padding()
-                
-                ForEach(viewModel.characterArray, id: \.self){ legend in
-        
-                    Text(legend)
-                    .fixedSize(horizontal: true, vertical: true)
-                }.foregroundColor(.white)
+
+                Text(viewModel.legendString)
+                    .foregroundColor(.white)
+                    .frame(height: 10)
+
                 
                 Toggle("SPECIALS", isOn: $viewModel.specialsSwitch)
                     .foregroundColor(.white)

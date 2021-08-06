@@ -24,13 +24,13 @@ public class RouletteViewModel : ObservableObject  {
     
     
     //Random Results
-    private var characterString: String = ""
+    @Published var legendString: String = ""
     @Published var weaponsString: String = ""
     @Published var dropZoneString: String = ""
     @Published var medString: String = ""
     @Published var gearString: String = ""
     @Published var specialString: String = ""
-    @Published var characterArray: [String] = []
+    private var characterArray: [String] = []
     
     //Model Call
     let model: Gamemodel = Gamemodel()
@@ -41,6 +41,7 @@ public class RouletteViewModel : ObservableObject  {
     }
     
     func startGame() {
+        
         
         if locationSwitch {
             switch(mapChoice){
@@ -89,11 +90,13 @@ public class RouletteViewModel : ObservableObject  {
             }
             if duos {
                 characterArray = [firstPos,secPos]
+                legendString = characterArray.joined(separator: ", ")
             } else {
                 characterArray = [firstPos,secPos,thirdPos]
+                legendString = characterArray.joined(separator: ", ")
             }
         } else {
-           characterArray = []
+            characterArray = []
         }
         
         if specialsSwitch {
@@ -107,6 +110,7 @@ public class RouletteViewModel : ObservableObject  {
     private func getRandom( array: [String] )-> String {
         return array.randomElement()!
     }
+    
     func resetButton() {
         weaponsString  = ""
         dropZoneString = ""

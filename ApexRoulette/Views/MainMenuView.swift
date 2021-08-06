@@ -9,7 +9,7 @@ import SwiftUI
 
 
 
-struct ContentView: View {
+struct MainMenuView: View {
     
     var body: some View {
         NavigationView {
@@ -80,8 +80,8 @@ struct ContentView: View {
     }
 }
     
-    struct Content_Previews: PreviewProvider {
+    struct MainMenuView_Previews: PreviewProvider {
         static var previews: some View {
-            ContentView()
+            MainMenuView()
         }
     }

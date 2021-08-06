@@ -18,10 +18,10 @@ struct Gamemodel {
     let MEDICALS: [String] = ["No Lifeline Drone","Lifeline Drone only","No Phoenix Kits",
                               "Phoenix Kits only","No healables. GLHF","Shield Batteries only","Only shield regen",
                               "Only health regen", "No big heals","Only big heals","Med kits only","Shield Cells only"
-                              ,"Syringes only","Who's ready to die on a zipline? I am!","Pain, pain, pain, pain - Wratih"]
+                              ,"Syringes only","Who's ready to die on a zipline? I am!"]
     
     let GEAR: [String] = ["No body shields","No arc stars","No extended mags",
-                          "No barrel stabalisers","No helmets","Helmets only"," Speed is life! - Octane",
+                          "No barrel stabalisers","No helmets","Helmets only",
                           "No knockdown shields (minus self res shield)","No red evos","Only white gear",
                           "No frag grenades","No thermite grenades","Only grenades are thermites","No abilities.",
                           "Nessie isn't a piece of equipment, she's a stuffed toy!",
@@ -37,7 +37,6 @@ struct Gamemodel {
                             "Sole Survivor. Everyone in the squad must solo queue.",
                             "Time's Up! Jumpmaster lands somewhere else to others. " +
                                 "If the Jumpmaster dies before the meetup, all must die! ",
-                            "I am exasta.esl.elastic, I'm great!",
                             "Jump Off the Map! Teammates must jump separate across the map.",
                             "Boxing Match. You must drop your weapons, throw hands and punch the final squad to death.",
                             "No Purples! You are not allowed to use anything graded purple or higher. "

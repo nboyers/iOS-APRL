@@ -11,7 +11,7 @@ import SwiftUI
 struct ApexRouletteApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainMenuView()
         }
     }
 }

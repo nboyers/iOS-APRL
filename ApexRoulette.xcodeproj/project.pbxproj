@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -11,10 +11,11 @@
 		DF05DCAD26865DE000443412 /* duke_fill.otf in Resources */ = {isa = PBXBuildFile; fileRef = DF05DCAA26865DE000443412 /* duke_fill.otf */; };
 		DF05DCAE26865DE000443412 /* blocktastic.otf in Resources */ = {isa = PBXBuildFile; fileRef = DF05DCAB26865DE000443412 /* blocktastic.otf */; };
 		DF05DCAF26865DE000443412 /* blocktastic_itl.otf in Resources */ = {isa = PBXBuildFile; fileRef = DF05DCAC26865DE000443412 /* blocktastic_itl.otf */; };
+		DF6B088626AAF15000E111BC /* InterstitialAds.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6B088526AAF15000E111BC /* InterstitialAds.swift */; };
 		DFEDDF972686121B008D208D /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEDDF962686121B008D208D /* GameView.swift */; };
 		DFEDDF9926861231008D208D /* RouletteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEDDF9826861231008D208D /* RouletteViewModel.swift */; };
 		DFF0CC14267FAD1E0053711B /* ApexRouletteApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF0CC13267FAD1E0053711B /* ApexRouletteApp.swift */; };
-		DFF0CC16267FAD1E0053711B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF0CC15267FAD1E0053711B /* ContentView.swift */; };
+		DFF0CC16267FAD1E0053711B /* MainMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF0CC15267FAD1E0053711B /* MainMenuView.swift */; };
 		DFF0CC18267FAD1F0053711B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFF0CC17267FAD1F0053711B /* Assets.xcassets */; };
 		DFF0CC1B267FAD1F0053711B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFF0CC1A267FAD1F0053711B /* Preview Assets.xcassets */; };
 		DFF0CC23267FAD3D0053711B /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF0CC22267FAD3D0053711B /* GameModel.swift */; };
@@ -27,11 +28,12 @@
 		DF05DCAA26865DE000443412 /* duke_fill.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = duke_fill.otf; sourceTree = "<group>"; };
 		DF05DCAB26865DE000443412 /* blocktastic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = blocktastic.otf; sourceTree = "<group>"; };
 		DF05DCAC26865DE000443412 /* blocktastic_itl.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = blocktastic_itl.otf; sourceTree = "<group>"; };
+		DF6B088526AAF15000E111BC /* InterstitialAds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterstitialAds.swift; sourceTree = "<group>"; };
 		DFEDDF962686121B008D208D /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		DFEDDF9826861231008D208D /* RouletteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouletteViewModel.swift; sourceTree = "<group>"; };
 		DFF0CC10267FAD1E0053711B /* ApexRoulette.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ApexRoulette.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFF0CC13267FAD1E0053711B /* ApexRouletteApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApexRouletteApp.swift; sourceTree = "<group>"; };
-		DFF0CC15267FAD1E0053711B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		DFF0CC15267FAD1E0053711B /* MainMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenuView.swift; sourceTree = "<group>"; };
 		DFF0CC17267FAD1F0053711B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DFF0CC1A267FAD1F0053711B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		DFF0CC1C267FAD1F0053711B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -64,7 +66,6 @@
 				812440E7973D2DEBB015974E /* Pods-ApexRoulette.debug.xcconfig */,
 				0B77B34799660E15DCD3C482 /* Pods-ApexRoulette.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -76,6 +77,14 @@
 				DF05DCAA26865DE000443412 /* duke_fill.otf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		DF6B088426AAF12F00E111BC /* Monitization */ = {
+			isa = PBXGroup;
+			children = (
+				DF6B088526AAF15000E111BC /* InterstitialAds.swift */,
+			);
+			path = Monitization;
 			sourceTree = "<group>";
 		};
 		DFF0CC07267FAD1E0053711B = {
@@ -99,6 +108,7 @@
 		DFF0CC12267FAD1E0053711B /* ApexRoulette */ = {
 			isa = PBXGroup;
 			children = (
+				DF6B088426AAF12F00E111BC /* Monitization */,
 				DF05DCB026865E0E00443412 /* Fonts */,
 				DFF0CC24267FAD450053711B /* Model */,
 				DFF0CC25267FAD500053711B /* ViewModel */,
@@ -136,7 +146,7 @@
 		DFF0CC26267FAD5A0053711B /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				DFF0CC15267FAD1E0053711B /* ContentView.swift */,
+				DFF0CC15267FAD1E0053711B /* MainMenuView.swift */,
 				DFEDDF962686121B008D208D /* GameView.swift */,
 			);
 			path = Views;
@@ -268,8 +278,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DFF0CC16267FAD1E0053711B /* ContentView.swift in Sources */,
+				DFF0CC16267FAD1E0053711B /* MainMenuView.swift in Sources */,
 				DFEDDF9926861231008D208D /* RouletteViewModel.swift in Sources */,
+				DF6B088626AAF15000E111BC /* InterstitialAds.swift in Sources */,
 				DFF0CC14267FAD1E0053711B /* ApexRouletteApp.swift in Sources */,
 				DFEDDF972686121B008D208D /* GameView.swift in Sources */,
 				DFF0CC23267FAD3D0053711B /* GameModel.swift in Sources */,
