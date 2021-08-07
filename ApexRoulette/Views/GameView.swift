@@ -53,7 +53,6 @@ struct GameView: View {
                 
                 Text(viewModel.gearString)
                     .foregroundColor(.white)
-                    .frame(height: 10)
                     .fixedSize(horizontal: false, vertical: true)
                 
                 Toggle("LEGENDS", isOn: $viewModel.legendSwitch) 
