@@ -96,6 +96,7 @@ public class RouletteViewModel : ObservableObject  {
                 legendString = characterArray.joined(separator: ", ")
             }
         } else {
+            legendString = ""
             characterArray = []
         }
         
@@ -118,6 +119,7 @@ public class RouletteViewModel : ObservableObject  {
         gearString = ""
         specialString = ""
         legendString = ""
+        characterArray = []
         weaponSwitch = true
         locationSwitch = true
         medicalsSwitch = true
