@@ -24,7 +24,7 @@ struct Gamemodel {
                           "No barrel stabalisers","No helmets","Helmets only",
                           "No knockdown shields (minus self res shield)","No red evos","Only white gear",
                           "No frag grenades","No thermite grenades","Only grenades are thermites","No abilities",
-                          "Full body protection - Only use the Helmet and Body Shield","Ultimate Accelerant only",
+                          "Only use the Helmet and Body Shield","Ultimate Accelerant only",
                           "Don't use the Knockdown Shield",
                           "Don't use any body protection","Don't use the backpack"]
     
@@ -32,8 +32,8 @@ struct Gamemodel {
                              "Fuse", "Gibraltar", "Horizon", "Lifeline","Loba", "Mirage", "Octane", "Rampart", "Revenant",
                              "Wattson", "Wraith"]
     
-    let SPECIAL:[String] = ["Bloodthirsty - You cannot heal until you kill",
-                            "Sole Survivor -  Everyone in the squad must solo queue",
+    let SPECIAL:[String] = ["You cannot heal until you kill",
+                            "Everyone in the squad must solo queue",
                             "Jumpmaster lands somewhere else to others " +
                                 "If the Jumpmaster dies before the meetup, all must die! ",
                             "Jump Off the Map! Teammates must jump separate across the map",
@@ -54,8 +54,7 @@ struct Gamemodel {
                             "Never revive teammates","Only loot houses from the 2nd floor and up",
                             "Jump out of the plane as soon as possible and only head East " +
                                 "Land as far east as you can possibly get",
-                            "Loot as normal, but then you must find a team and " +
-                                "follow them around for as long as possible and sports cast ",
+                            "you must find a team and follow them around for as long as possible and sports cast ",
                             "Only use the first weapon you find during the game",
                             "Act as if your abilities don't exist",
                             "Keep moving! You are not allowed to stop moving at any point in time",
