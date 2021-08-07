@@ -23,48 +23,48 @@ struct Gamemodel {
     let GEAR: [String] = ["No body shields","No arc stars","No extended mags",
                           "No barrel stabalisers","No helmets","Helmets only",
                           "No knockdown shields (minus self res shield)","No red evos","Only white gear",
-                          "No frag grenades","No thermite grenades","Only grenades are thermites","No abilities.",
-                          "Full body protection. Only use the Helmet and Body Shield","Ultimate Accelerant only",
-                          "Don't use the Knockdown Shield.",
+                          "No frag grenades","No thermite grenades","Only grenades are thermites","No abilities",
+                          "Full body protection - Only use the Helmet and Body Shield","Ultimate Accelerant only",
+                          "Don't use the Knockdown Shield",
                           "Don't use any body protection","Don't use the backpack"]
     
     let LEGENDS: [String] = ["Bloodhound","Pathfinder","Bangalore", "Caustic","Crypto",
                              "Fuse", "Gibraltar", "Horizon", "Lifeline","Loba", "Mirage", "Octane", "Rampart", "Revenant",
                              "Wattson", "Wraith"]
     
-    let SPECIAL:[String] = ["Bloodthirsty. You cannot heal until you kill.",
-                            "Sole Survivor. Everyone in the squad must solo queue.",
-                            "Jumpmaster lands somewhere else to others. " +
+    let SPECIAL:[String] = ["Bloodthirsty - You cannot heal until you kill",
+                            "Sole Survivor -  Everyone in the squad must solo queue",
+                            "Jumpmaster lands somewhere else to others " +
                                 "If the Jumpmaster dies before the meetup, all must die! ",
-                            "Jump Off the Map! Teammates must jump separate across the map.",
-                            "Boxing Match. You must drop your weapons, throw hands and punch the final squad to death.",
-                            "No Purples! You are not allowed to use anything graded purple or higher. "
+                            "Jump Off the Map! Teammates must jump separate across the map",
+                            "Boxing Match You must drop your weapons, throw hands and punch the final squad to death",
+                            "No Purples! You are not allowed to use anything graded purple or higher "
                             ,"Purple Evo Shields earned must be dropped immediately!",
-                            "Fire in the Hole! You must use grenades on the final squad.",
-                            "No Respawns or Revives! No golden knockdown either.",
+                            "Fire in the Hole! You must use grenades on the final squad",
+                            "No Respawns or Revives! No golden knockdown either",
                             "You are only allowed to use Mozambique's without hammerpoint!" +
-                                " No higher than blue shields and no more than 2 stacks of healable. " ,
-                            "When you kill someone you must swap your weapons for theirs. " +
-                                "You must thirst any downed player and swap before attacking another player.",
-                            "Only use grenades and bows for a whole game.",
-                            "Jumpmaster is president. Protect them at all cost. " +
+                                " No higher than blue shields and no more than 2 stacks of healable" ,
+                            "When you kill someone you must swap your weapons for theirs " +
+                                "You must thirst any downed player and swap before attacking another player",
+                            "Only use grenades and bows for a whole game",
+                            "Jumpmaster is president Protect them at all cost " +
                                 "Failure to do means you forfeit and you must die!",
-                            "No comms! You cannot communicate with your team. Even if you go down",
+                            "No comms! You cannot communicate with your team Even if you go down",
                             "You can only land on a house if somebody else is already going for that house",
                             "Never revive teammates","Only loot houses from the 2nd floor and up",
-                            "Jump out of the plane as soon as possible and only head East. " +
+                            "Jump out of the plane as soon as possible and only head East " +
                                 "Land as far east as you can possibly get",
                             "Loot as normal, but then you must find a team and " +
                                 "follow them around for as long as possible and sports cast ",
-                            "Only use the first weapon you find during the game.",
-                            "Act as if your abilities don't exist.",
-                            "Keep moving! You are not allowed to stop moving at any point in time.",
-                            "You're not allowed to reload whilst fighting an enemy. Switching weapons only!",
-                            "After the zone appears, you are only allowed to move when the zone does. " +
+                            "Only use the first weapon you find during the game",
+                            "Act as if your abilities don't exist",
+                            "Keep moving! You are not allowed to stop moving at any point in time",
+                            "You're not allowed to reload whilst fighting an enemy Switching weapons only!",
+                            "After the zone appears, you are only allowed to move when the zone does " +
                                 "When the zone doesn't move, you don't",
-                            "No repairing your armor. When your armor drops to 0" +
-                                " you have to find new armor to replace it.",
-                            "Hipfire only.", "As soon as you get a kill you MUST drop that gun and get another or else " +
+                            "No repairing your armor When your armor drops to 0" +
+                                " you have to find new armor to replace it",
+                            "Hipfire only", "As soon as you get a kill you MUST drop that gun and get another or else " +
                                 "use your fists until you get one"]
     
     let OLYMPUS: [String] = ["Oasis" , "Turbine" , "Power Grid" , "Energy Depot" ,
