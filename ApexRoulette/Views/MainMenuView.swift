@@ -1,17 +1,19 @@
 //
 //  ContentView.swift
 //  ApexRoulette
-//
-//  Created by Noah Boyers on 6/20/21.
+// @Author Noah Boyers
+//  Updated on 08/11/21.
 //
 
 import SwiftUI
 
+// TODO: Hamburger Menu GLitch - Takes user back to main menu
+// When they click the menu in GameView
 
 
 struct MainMenuView: View {
     
-    @State var showMenu = false //Showing Side View
+    @State var showMenu = false
     
     var body: some View {
         
@@ -21,8 +23,6 @@ struct MainMenuView: View {
                     withAnimation {
                         self.showMenu = false
                     }}}
-        
-        
         NavigationView {
             GeometryReader { geometry in
                 
@@ -33,14 +33,13 @@ struct MainMenuView: View {
                         .offset(x: self.showMenu ? geometry.size.width/2 : 0)
                         .disabled(self.showMenu ? true : false)
                     
-                    
-                    
                     if self.showMenu {
                         HamburgerView()
                             .frame(width: geometry.size.width/2)
                             .transition(.move(edge: .leading))
                     }
                 }
+               
                 .navigationBarItems(leading: (
                     Button(action: {
                         withAnimation {
@@ -51,15 +50,12 @@ struct MainMenuView: View {
                             .imageScale(.large)
                             .font(.system(size: 25, weight: .heavy))
                             .foregroundColor(.gray)
-                          
+                        
                     }
                 ))
                 .gesture(drag)
             }
         }
-        
-        
-        
     }
 }
 
@@ -72,29 +68,55 @@ struct CompleteView: View {
     
     var body: some View {
         NavigationView {
-            VStack {
-                Spacer().frame(height: 100)
-                
-                Text("Map Selection")
-                    .frame(maxWidth: .infinity, alignment: .center)
-                    .multilineTextAlignment(.center)
-                    .font(Font.custom("blocktastic", size: 60))
-                    .foregroundColor(.white)
-                
-                Spacer().frame(height: 400)
-                OlympusButton()
-                    .navigationBarTitle("")
-                    .navigationBarHidden(true)
-                
-                Spacer().frame(height: 20)
-                World_EdgeButton()
-                    .navigationBarTitle("")
-                    .navigationBarHidden(true)
-                
-                Spacer().frame(height: 20)
-                
-                
-                Spacer()
+            GeometryReader { geo in
+                VStack {
+                    Group{
+                        Text("Map Selection")
+                            .frame(maxWidth: .infinity, alignment: .center)
+                            .font(Font.custom("blocktastic", size: 60))
+                            .foregroundColor(.white)
+                        
+                        //Distance from the button to Text
+                        
+                        Spacer()
+                            .frame(height: geo.size.height*0.6)
+                        
+                        NavigationLink(destination: GameView(viewModel: RouletteViewModel.init(MAP: "OLYMPUS"))
+                                        .navigationBarTitle("") //this must be empty
+                                        .navigationBarHidden(true)
+                                        .navigationBarBackButtonHidden(true)) {
+                            Text("OLYMPUS")
+                        }
+                        .frame(minWidth: 0, maxWidth: 200)
+                        .font(Font.custom("blocktastic", size: 30))
+                        .padding()
+                        .foregroundColor(.white)
+                        .overlay(RoundedRectangle(cornerRadius: 25)
+                                    .stroke(Color.white, lineWidth: 3))
+                        
+                        //Distance inbetween the buttons
+                        Spacer()
+                            .frame(height: geo.size.height/30)
+                        
+                        NavigationLink(destination: GameView(viewModel: RouletteViewModel.init(MAP: "WORLD'S EDGE"))
+                                        .navigationBarTitle("") //this must be empty
+                                        .navigationBarHidden(true)
+                                        .navigationBarBackButtonHidden(true)) {
+                            Text("WORLD'S EDGE")
+                        }
+                        .frame(minWidth: 0, maxWidth: 200)
+                        .font(Font.custom("blocktastic", size: 30))
+                        .padding()
+                        .foregroundColor(.white)
+                        .overlay(RoundedRectangle(cornerRadius: 25)
+                                    .stroke(Color.white, lineWidth: 3))
+                        
+                        //Final Spacer at the bottom
+                        Spacer()
+                            .frame(height: geo.size.height/0.5)
+                        
+                    }
+                }
             }.background(Image("main_menu")
                             .resizable()
                             .ignoresSafeArea()
@@ -102,44 +124,6 @@ struct CompleteView: View {
         }
     }
 }
-
-struct OlympusButton: View {
-    var body: some View {
-        NavigationLink(destination: GameView(viewModel: RouletteViewModel.init(MAP: "OLYMPUS"))) {
-            Text("OLYMPUS")
-        }.navigationBarTitle("")
-        .navigationBarHidden(true)
-        .frame(minWidth: 0, maxWidth: 200)
-        .font(Font.custom("blocktastic", size: 30))
-        .padding()
-        .foregroundColor(.white)
-        .overlay(
-            RoundedRectangle(cornerRadius: 25)
-                .stroke(Color.white, lineWidth: 3))
-    }
-}
-
-struct World_EdgeButton: View {
-    var body: some View {
-        NavigationLink(destination: GameView(viewModel: RouletteViewModel.init(MAP: "WORLD'S EDGE"))) {
-            Text("WORLD'S EDGE")
-        }.navigationBarTitle("")
-        .navigationBarHidden(true)
-        .frame(minWidth: 0, maxWidth: 200)
-        .font(Font.custom("blocktastic", size: 30))
-        .padding()
-        .foregroundColor(.white)
-        .overlay(
-            RoundedRectangle(cornerRadius: 25)
-                .stroke(Color.white, lineWidth: 3))
-        
-    }
-}
-
-
-
-
-
 
 
 struct MainMenuView_Previews: PreviewProvider {
