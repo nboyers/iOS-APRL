@@ -79,6 +79,9 @@ private struct FullSwipePopHelper<MainContent: View,Content: View>: View {
     func getOffset(size: CGFloat) -> CGFloat {
         let progress = offset / size
         
+        // Moving slightly moving the view 80 (edge of the screen) towards the right side
+        // and getting back to 0 based on the user's drag
+        
         let start: CGFloat = -80
         let progressWidth: CGFloat = (progress * 90) <= 90 ? (progress * 90) : 90
         let mainOffset = (start + progressWidth) < 0 ? (start + progressWidth) : 0
@@ -88,8 +91,8 @@ private struct FullSwipePopHelper<MainContent: View,Content: View>: View {
 }
 
 
-struct FullSwipePopExtension_Previews: PreviewProvider {
-    static var previews: some View {
-        GameView()
-    }
-}
+//struct FullSwipePopExtension_Previews: PreviewProvider {
+//    static var previews: some View {
+//        GameView()
+//    }
+//}
