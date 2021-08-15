@@ -87,8 +87,3 @@ private struct FullSwipePopHelper<MainContent: View,Content: View>: View {
     }
 }
 
-struct FullSwipePopExtension_Previews: PreviewProvider {
-    static var previews: some View {
-        Home()
-    }
-}

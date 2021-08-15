@@ -11,7 +11,6 @@
 		DF05DCAD26865DE000443412 /* duke_fill.otf in Resources */ = {isa = PBXBuildFile; fileRef = DF05DCAA26865DE000443412 /* duke_fill.otf */; };
 		DF05DCAE26865DE000443412 /* blocktastic.otf in Resources */ = {isa = PBXBuildFile; fileRef = DF05DCAB26865DE000443412 /* blocktastic.otf */; };
 		DF05DCAF26865DE000443412 /* blocktastic_itl.otf in Resources */ = {isa = PBXBuildFile; fileRef = DF05DCAC26865DE000443412 /* blocktastic_itl.otf */; };
-		DF64D65426C98D2D0071AA8E /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF64D65326C98D2D0071AA8E /* Home.swift */; };
 		DF66616426C426E700E9531D /* HamburgerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF66616326C426E700E9531D /* HamburgerView.swift */; };
 		DF6B088626AAF15000E111BC /* InterstitialAds.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6B088526AAF15000E111BC /* InterstitialAds.swift */; };
 		DF7BCC3126C8863400E617BA /* HamburgerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7BCC3026C8863400E617BA /* HamburgerViewModel.swift */; };
@@ -32,7 +31,6 @@
 		DF05DCAA26865DE000443412 /* duke_fill.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = duke_fill.otf; sourceTree = "<group>"; };
 		DF05DCAB26865DE000443412 /* blocktastic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = blocktastic.otf; sourceTree = "<group>"; };
 		DF05DCAC26865DE000443412 /* blocktastic_itl.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = blocktastic_itl.otf; sourceTree = "<group>"; };
-		DF64D65326C98D2D0071AA8E /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		DF66616326C426E700E9531D /* HamburgerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HamburgerView.swift; sourceTree = "<group>"; };
 		DF6B088526AAF15000E111BC /* InterstitialAds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterstitialAds.swift; sourceTree = "<group>"; };
 		DF7BCC3026C8863400E617BA /* HamburgerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HamburgerViewModel.swift; sourceTree = "<group>"; };
@@ -167,7 +165,6 @@
 				DFF0CC15267FAD1E0053711B /* MainMenuView.swift */,
 				DFEDDF962686121B008D208D /* GameView.swift */,
 				DF66616326C426E700E9531D /* HamburgerView.swift */,
-				DF64D65326C98D2D0071AA8E /* Home.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -300,7 +297,6 @@
 			files = (
 				DFF0CC16267FAD1E0053711B /* MainMenuView.swift in Sources */,
 				DFEDDF9926861231008D208D /* RouletteViewModel.swift in Sources */,
-				DF64D65426C98D2D0071AA8E /* Home.swift in Sources */,
 				DF6B088626AAF15000E111BC /* InterstitialAds.swift in Sources */,
 				DFF0CC14267FAD1E0053711B /* ApexRouletteApp.swift in Sources */,
 				DF7BCC3126C8863400E617BA /* HamburgerViewModel.swift in Sources */,
