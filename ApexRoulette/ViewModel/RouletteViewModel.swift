@@ -8,6 +8,9 @@
 import Foundation
 import Combine
 
+
+
+
 public class RouletteViewModel : ObservableObject  {
     // Plays into what map is chosen
     var mapChoice: String = ""
