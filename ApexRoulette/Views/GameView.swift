@@ -10,11 +10,13 @@ import SwiftUI
 
 struct GameView: View {
     
-    @ObservedObject var viewModel = RouletteViewModel() 
-   // var interstitial:Interstitial
+    @ObservedObject var viewModel = RouletteViewModel()
+    @State private var backToMainMenu = false
+    let frameHieght:CGFloat = 10
+    // var interstitial:Interstitial
     
     var body: some View {
-        
+       
         VStack {
             
             Group {
@@ -25,7 +27,7 @@ struct GameView: View {
                 
                 Text(viewModel.weaponsString)
                     .foregroundColor(.white)
-                    .frame(height: 10)
+                    .frame(height: frameHieght)
                 
                 Toggle("MEDICALS", isOn: $viewModel.medicalsSwitch)
                     .foregroundColor(.white)
@@ -33,7 +35,7 @@ struct GameView: View {
                 
                 Text(viewModel.medString)
                     .foregroundColor(.white)
-                    .frame(height: 10)
+                    .frame(height: frameHieght)
                 
                 Toggle("DROPZONE", isOn: $viewModel.locationSwitch) //for the map
                     .foregroundColor(.white)
@@ -41,7 +43,7 @@ struct GameView: View {
                 
                 Text(viewModel.dropZoneString)
                     .foregroundColor(.white)
-                    .frame(height: 10)
+                    .frame(height: frameHieght)
                 
             }
             
@@ -58,16 +60,16 @@ struct GameView: View {
                 Toggle("LEGENDS", isOn: $viewModel.legendSwitch) 
                     .foregroundColor(.white)
                     .padding()
-
+                
                 Text(viewModel.legendString)
                     .foregroundColor(.white)
-                    .frame(height: 10)
-
+                    .frame(height: frameHieght)
+                
                 
                 Toggle("SPECIALS", isOn: $viewModel.specialsSwitch)
                     .foregroundColor(.white)
                     .padding()
-
+                
                 
                 Text(viewModel.specialString)
                     .foregroundColor(.white)
@@ -78,18 +80,22 @@ struct GameView: View {
             Spacer()
             ButtonsGroup(viewModel: viewModel)
             Spacer()
+            
         }
+        
         .background(Image("game_view")
                         .resizable()
-                        .edgesIgnoringSafeArea(.all))
+                        .edgesIgnoringSafeArea(.all))    
     }
+    
 }
 
 
 
 struct ButtonsGroup: View {
     @ObservedObject var viewModel: RouletteViewModel
-    
+    @Environment(\.presentationMode) var presentationMode
+   
     var body: some View {
         Group {
             
@@ -111,7 +117,7 @@ struct ButtonsGroup: View {
             
             
             Button(action: {
-                    viewModel.startGame()
+                viewModel.startGame()
                 
             }, label: {
                 Text("RANDOMIZER")
@@ -123,10 +129,14 @@ struct ButtonsGroup: View {
                 RoundedRectangle(cornerRadius: 25)
                     .stroke(Color.white, lineWidth: 3))
             Spacer()
-           
         }
+        
     }
+    
 }
+
+
+
 
 struct GameView_Previews: PreviewProvider {
     static var previews: some View {

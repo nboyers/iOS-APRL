@@ -13,6 +13,8 @@
 		DF05DCAF26865DE000443412 /* blocktastic_itl.otf in Resources */ = {isa = PBXBuildFile; fileRef = DF05DCAC26865DE000443412 /* blocktastic_itl.otf */; };
 		DF66616426C426E700E9531D /* HamburgerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF66616326C426E700E9531D /* HamburgerView.swift */; };
 		DF6B088626AAF15000E111BC /* InterstitialAds.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6B088526AAF15000E111BC /* InterstitialAds.swift */; };
+		DF7BCC3126C8863400E617BA /* HamburgerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7BCC3026C8863400E617BA /* HamburgerViewModel.swift */; };
+		DF7BCC3526C8A40700E617BA /* FullSwipePopExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7BCC3426C8A40700E617BA /* FullSwipePopExtension.swift */; };
 		DFEDDF972686121B008D208D /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEDDF962686121B008D208D /* GameView.swift */; };
 		DFEDDF9926861231008D208D /* RouletteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEDDF9826861231008D208D /* RouletteViewModel.swift */; };
 		DFF0CC14267FAD1E0053711B /* ApexRouletteApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF0CC13267FAD1E0053711B /* ApexRouletteApp.swift */; };
@@ -31,6 +33,8 @@
 		DF05DCAC26865DE000443412 /* blocktastic_itl.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = blocktastic_itl.otf; sourceTree = "<group>"; };
 		DF66616326C426E700E9531D /* HamburgerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HamburgerView.swift; sourceTree = "<group>"; };
 		DF6B088526AAF15000E111BC /* InterstitialAds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterstitialAds.swift; sourceTree = "<group>"; };
+		DF7BCC3026C8863400E617BA /* HamburgerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HamburgerViewModel.swift; sourceTree = "<group>"; };
+		DF7BCC3426C8A40700E617BA /* FullSwipePopExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullSwipePopExtension.swift; sourceTree = "<group>"; };
 		DFEDDF962686121B008D208D /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		DFEDDF9826861231008D208D /* RouletteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouletteViewModel.swift; sourceTree = "<group>"; };
 		DFF0CC10267FAD1E0053711B /* ApexRoulette.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ApexRoulette.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -89,6 +93,14 @@
 			path = Monitization;
 			sourceTree = "<group>";
 		};
+		DF7BCC3626C8A43C00E617BA /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				DF7BCC3426C8A40700E617BA /* FullSwipePopExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		DFF0CC07267FAD1E0053711B = {
 			isa = PBXGroup;
 			children = (
@@ -111,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				DF6B088426AAF12F00E111BC /* Monitization */,
+				DF7BCC3626C8A43C00E617BA /* Extensions */,
 				DF05DCB026865E0E00443412 /* Fonts */,
 				DFF0CC24267FAD450053711B /* Model */,
 				DFF0CC25267FAD500053711B /* ViewModel */,
@@ -141,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				DFEDDF9826861231008D208D /* RouletteViewModel.swift */,
+				DF7BCC3026C8863400E617BA /* HamburgerViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -285,6 +299,8 @@
 				DFEDDF9926861231008D208D /* RouletteViewModel.swift in Sources */,
 				DF6B088626AAF15000E111BC /* InterstitialAds.swift in Sources */,
 				DFF0CC14267FAD1E0053711B /* ApexRouletteApp.swift in Sources */,
+				DF7BCC3126C8863400E617BA /* HamburgerViewModel.swift in Sources */,
+				DF7BCC3526C8A40700E617BA /* FullSwipePopExtension.swift in Sources */,
 				DF66616426C426E700E9531D /* HamburgerView.swift in Sources */,
 				DFEDDF972686121B008D208D /* GameView.swift in Sources */,
 				DFF0CC23267FAD3D0053711B /* GameModel.swift in Sources */,
