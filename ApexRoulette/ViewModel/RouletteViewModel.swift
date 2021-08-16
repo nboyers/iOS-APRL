@@ -7,13 +7,13 @@
 
 import Foundation
 import Combine
-
+import SwiftUI
 
 
 
 public class RouletteViewModel : ObservableObject  {
     // Plays into what map is chosen
-    var mapChoice: String = ""
+    var mapChoice: String   = ""
     var duos: Bool = false
     
     //SWITCHES
@@ -38,8 +38,8 @@ public class RouletteViewModel : ObservableObject  {
     //Model Call
     let model: Gamemodel = Gamemodel()
     
-    init (){}
-    init(MAP: String) {
+    init(){}
+    init(MAP: String){
         mapChoice = MAP
     }
     
@@ -131,4 +131,7 @@ public class RouletteViewModel : ObservableObject  {
         specialsSwitch = true
         
     }
+    func changeMap(MAP: String){
+           self.mapChoice = MAP
+       }
 }

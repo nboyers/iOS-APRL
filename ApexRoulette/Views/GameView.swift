@@ -82,10 +82,10 @@ struct GameView: View {
             Spacer()
             
         }
-        
         .background(Image("game_view")
                         .resizable()
-                        .edgesIgnoringSafeArea(.all))    
+                        .edgesIgnoringSafeArea(.all))
+        
     }
     
 }

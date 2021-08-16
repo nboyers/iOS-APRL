@@ -2,19 +2,17 @@
 //  ContentView.swift
 //  ApexRoulette
 // @Author Noah Boyers
-//  Updated on 08/11/21.
+//  Updated on 08/11/21
 //
 
 import SwiftUI
-
-// TODO: Hamburger Menu GLitch - Takes user back to main menu
-// When they click the menu in GameView
 
 
 struct MainMenuView: View {
     
     @State var showMenu = false
     @State var showPop = false
+    @State var map: String = ""
     
     var body: some View {
         
@@ -29,7 +27,7 @@ struct MainMenuView: View {
                 
                 ZStack(alignment: .leading) {
                     
-                    CompleteView(showPop: $showPop)
+                    CompleteView(showPop: $showPop, map: $map)
                         .frame(width: geometry.size.width, height: geometry.size.height)
                         .offset(x: self.showMenu ? geometry.size.width/2 : 0)
                         .disabled(self.showMenu ? true : false)
@@ -56,7 +54,7 @@ struct MainMenuView: View {
                 .gesture(drag)
             }
         }.fullSwipePop(show: $showPop){
-            GameView()
+            GameView(viewModel: RouletteViewModel.init(MAP: map))
         }
         
     }
@@ -66,9 +64,8 @@ struct MainMenuView: View {
 
 
 struct CompleteView: View {
-    
     @Binding var showPop: Bool
-
+    @Binding var map: String
     
     var body: some View {
         NavigationView {
@@ -88,19 +85,19 @@ struct CompleteView: View {
                     
                     Group {
                         Button(action: {
-                           // GameView(viewModel: RouletteViewModel.init(MAP: "OLYMPUS"))
                             self.showPop.toggle()
+                            map = "OLYMPUS"
                             
                         }) {
                             Text("OLYMPUS")
                         }
                         Button(action: {
-                          //  GameView(viewModel: RouletteViewModel.init(MAP: "WORLD'S EDGE"))
                             self.showPop.toggle()
-                            
+                            map = "WORLD'S EDGE"
                         }) {
                             Text("WORLD'S EDGE")
                         }
+                        
                         
                     }
                     .frame(minWidth: 0, maxWidth: 200)
