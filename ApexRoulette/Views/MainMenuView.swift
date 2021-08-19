@@ -1,8 +1,8 @@
 //
 //  ContentView.swift
 //  ApexRoulette
-// @Author Noah Boyers
-//  Updated on 08/11/21
+//  Author Noah Boyers
+//  Updated 08/16/21
 //
 
 import SwiftUI
@@ -56,7 +56,6 @@ struct MainMenuView: View {
         }.fullSwipePop(show: $showPop){
             GameView(viewModel: RouletteViewModel.init(MAP: map))
         }
-        
     }
 }
 
@@ -97,8 +96,6 @@ struct CompleteView: View {
                         }) {
                             Text("WORLD'S EDGE")
                         }
-                        
-                        
                     }
                     .frame(minWidth: 0, maxWidth: 200)
                     .font(Font.custom("blocktastic", size: 30))
@@ -112,16 +109,12 @@ struct CompleteView: View {
                         .frame(height: geo.size.height/0.5)
                     
                 }
-                
-                
             }.background(Image("main_menu")
                             .resizable()
                             .ignoresSafeArea()
                             .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
         }
     }
-    
-    
 }
 
 

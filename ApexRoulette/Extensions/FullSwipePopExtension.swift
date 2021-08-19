@@ -34,26 +34,31 @@ private struct FullSwipePopHelper<MainContent: View,Content: View>: View {
     
     @GestureState var gestureOffset: CGFloat = 0
     @State var offset: CGFloat = 0
+    
     var body: some View {
         
         GeometryReader { proxy in
+            
             mainContent
-                .offset(x: show && offset >= 0 ? getOffset(size: proxy.size.width) : 0)
+                .offset(x: show && offset >= 0 ? getOffset(size: proxy.size.width)
+                            : 0)
                 .overlay(
-                    
                     ZStack {
+                        
                         if show {
                             content
-                                .offset(x: offset)
+                                
+                                
+                                .offset(x: offset > 0 ? offset : 0)
                                 .gesture(DragGesture()
                                             .updating($gestureOffset,
                                                       body: { value,out,_ in
                                                         
                                                         out = value.translation.width
+                                                        
                                                       })
                                             .onEnded({ value in
                                                 withAnimation(.linear.speed(2)) {
-                                                    
                                                     // Close if pass
                                                     offset = 0
                                                     
@@ -63,7 +68,6 @@ private struct FullSwipePopHelper<MainContent: View,Content: View>: View {
                                                     if translation > maxtranslation {
                                                         show = false
                                                     }
-                                                    
                                                 }
                                             }))
                                 .transition(.move(edge: .trailing))
@@ -71,6 +75,7 @@ private struct FullSwipePopHelper<MainContent: View,Content: View>: View {
                         }
                     }
                 )
+                //Updating offset only on vaild touch
                 .onChange(of: gestureOffset) { newValue in
                     offset = gestureOffset
                 }

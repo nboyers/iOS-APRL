@@ -131,7 +131,4 @@ public class RouletteViewModel : ObservableObject  {
         specialsSwitch = true
         
     }
-    func changeMap(MAP: String){
-           self.mapChoice = MAP
-       }
 }

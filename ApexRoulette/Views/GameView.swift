@@ -2,7 +2,7 @@
 //  GameView.swift
 //  ApexRoulette
 //
-//  Created by Noah Boyers on 6/26/21.
+//  Updated 08/16/21
 //
 
 import SwiftUI
