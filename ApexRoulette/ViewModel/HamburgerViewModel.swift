@@ -8,4 +8,8 @@
 import Foundation
 
 
-// WORK IN PROGRESS 
+//Class that drives if the user has paid or not
+
+public class HambugerViewModel : ObservableObject  {
+    var isPremuim: Bool = true
+}

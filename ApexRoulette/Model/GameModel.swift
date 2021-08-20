@@ -28,9 +28,15 @@ struct Gamemodel {
                           "Don't use the Knockdown Shield",
                           "Don't use any body protection","Don't use the backpack"]
     
-    let LEGENDS: [String] = ["Bloodhound","Pathfinder","Bangalore", "Caustic","Crypto",
+    let ALL_LEGENDS: [String] = ["Bloodhound","Pathfinder","Bangalore", "Caustic","Crypto",
                              "Fuse", "Gibraltar", "Horizon", "Lifeline","Loba", "Mirage", "Octane", "Rampart", "Revenant",
                              "Wattson", "Wraith"]
+    
+    let DEFAULT_LEGENDS: [String] = ["Bloodhound","Pathfinder","Bangalore","Lifeline","Wraith","Gibraltar"]
+    
+//    let DLC_LEGENDS: [String] = ["Mirage","Octane","Revenant","Horizon","Fuse","Caustic","Wattson","Rampart","Loba"
+//                                 ,"Crypto","Valkyrie","Seer"]
+
     
     let SPECIAL:[String] = ["You cannot heal until you kill",
                             "Everyone in the squad must solo queue",

@@ -11,6 +11,7 @@ import SwiftUI
 struct GameView: View {
     
     @ObservedObject var viewModel = RouletteViewModel()
+    
     @State private var backToMainMenu = false
     let frameHieght:CGFloat = 10
     
@@ -118,6 +119,7 @@ struct ButtonsGroup: View {
             
             Button(action: {
                 viewModel.startGame()
+                interstitial.LoadInterstitial()
                 interstitial.showAd(self)
             }, label: {
                 Text("RANDOMIZER")

@@ -19,7 +19,6 @@ final class Interstitial: GADInterstitialAd, GADFullScreenContentDelegate {
     func LoadInterstitial(){
         
         //TEST ID IN THE LOADED ADS
-        // REAL ID : ca-app-pub-3940256099942544/4411468910
         let request = GADRequest()
         GADInterstitialAd.load(withAdUnitID:"ca-app-pub-3940256099942544/4411468910",
                                request: request,
@@ -49,36 +48,14 @@ final class Interstitial: GADInterstitialAd, GADFullScreenContentDelegate {
         print("Ad did dismiss full screen content.")
     }
     func showAd(_ sender: Any){
-        let adOdds = Int.random(in: 0...10)
+        let adOdds = Int.random(in: 0...6)
         let root = UIApplication.shared.windows.first?.rootViewController
         if interstitial != nil {
-            if adOdds % 3 == 0 {
+           if adOdds % 3 == 0 {
                 interstitial!.present(fromRootViewController: root!)
-                }
-            } else {
-                print("Ad wasn't ready")
-            }
+           }
+        } else {
+            print("Ad wasn't ready")
         }
     }
-    
-    
-    struct AdView:View{
-        var interstitial:Interstitial
-        
-        init(){
-            self.interstitial = Interstitial()
-        }
-        
-        var body : some View{
-            Button(action: {interstitial.showAd(self)}){
-                Text("My Button")
-            }
-        }
-    }
-    
-    
-    struct AdView_Previews: PreviewProvider {
-        static var previews: some View {
-            AdView()
-        }
-    }
+}
