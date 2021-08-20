@@ -13,10 +13,9 @@ struct GameView: View {
     @ObservedObject var viewModel = RouletteViewModel()
     @State private var backToMainMenu = false
     let frameHieght:CGFloat = 10
-    // var interstitial:Interstitial
     
     var body: some View {
-       
+        
         VStack {
             
             Group {
@@ -95,7 +94,8 @@ struct GameView: View {
 struct ButtonsGroup: View {
     @ObservedObject var viewModel: RouletteViewModel
     @Environment(\.presentationMode) var presentationMode
-   
+    var interstitial: Interstitial = Interstitial()
+    
     var body: some View {
         Group {
             
@@ -118,7 +118,7 @@ struct ButtonsGroup: View {
             
             Button(action: {
                 viewModel.startGame()
-                
+                interstitial.showAd(self)
             }, label: {
                 Text("RANDOMIZER")
             }).frame(minWidth: 0, maxWidth: 150)
