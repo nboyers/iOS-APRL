@@ -8,11 +8,14 @@
 import SwiftUI
 
 
+
 struct MainMenuView: View {
     
     @State var showMenu = false
     @State var showPop = false
     @State var map: String = ""
+    @State var duo: Bool = false
+    @State var starter: Bool = false
     
     var body: some View {
         
@@ -34,7 +37,7 @@ struct MainMenuView: View {
                     
                     
                     if self.showMenu {
-                        HamburgerView()
+                        HamburgerView(startLegend: $starter, duos: $duo)
                             .frame(width: geometry.size.width/2)
                             .transition(.move(edge: .leading))
                     }
@@ -44,6 +47,7 @@ struct MainMenuView: View {
                                         Button(action: {
                                             withAnimation {
                                                 self.showMenu.toggle()
+                                                duo = duo
                                             }
                                         }) {
                                             Image(systemName: "line.horizontal.3")
@@ -54,7 +58,8 @@ struct MainMenuView: View {
                 .gesture(drag)
             }
         }.fullSwipePop(show: $showPop){
-            GameView(viewModel: RouletteViewModel.init(MAP: map))
+            GameView(viewModel: RouletteViewModel
+                        .init(MAP: map,DUO: duo, STARTERS: starter))
         }
     }
 }
@@ -116,7 +121,6 @@ struct CompleteView: View {
         }
     }
 }
-
 
 struct MainMenuView_Previews: PreviewProvider {
     static var previews: some View {

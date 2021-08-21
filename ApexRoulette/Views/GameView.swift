@@ -11,9 +11,7 @@ import SwiftUI
 struct GameView: View {
     
     @ObservedObject var viewModel = RouletteViewModel()
-    
-    @State private var backToMainMenu = false
-    let frameHieght:CGFloat = 10
+    let frameHieght: CGFloat = 10
     
     var body: some View {
         

@@ -14,8 +14,8 @@ import SwiftUI
 public class RouletteViewModel : ObservableObject  {
     // Plays into what map is chosen
     var mapChoice: String   = ""
-     @State var duos: Bool = false
-     @State var starterLegends: Bool = false
+    @Published var duos: Bool = false
+    @Published var starterLegends: Bool = false
     
     //SWITCHES
     var weaponSwitch: Bool = true
@@ -40,9 +40,12 @@ public class RouletteViewModel : ObservableObject  {
     let model: Gamemodel = Gamemodel()
     
     init(){}
-    init(MAP: String){
+    init(MAP: String, DUO:Bool,STARTERS: Bool){
         mapChoice = MAP
+        duos = DUO
+        starterLegends = STARTERS   
     }
+    
     
     func startGame() {
         
@@ -81,6 +84,7 @@ public class RouletteViewModel : ObservableObject  {
         }
         
         if legendSwitch {
+            
             // This will only fire if the user has paid
             if starterLegends {
                 var starter_one = getRandom(array: model.DEFAULT_LEGENDS)
@@ -99,29 +103,34 @@ public class RouletteViewModel : ObservableObject  {
                     characterArray = [starter_one,starter_two,starter_three]
                     legendString = characterArray.joined(separator: ", ")
                 }
-            }
-            
-            // This is the default free version
-            var firstPos: String = getRandom(array: model.ALL_LEGENDS)
-            var secPos: String = getRandom(array: model.ALL_LEGENDS)
-            var thirdPos: String = getRandom(array: model.ALL_LEGENDS)
-            
-            while(firstPos == secPos || firstPos == thirdPos || secPos == thirdPos) {
-                firstPos = getRandom(array: model.ALL_LEGENDS)
-                secPos = getRandom(array: model.ALL_LEGENDS)
-                thirdPos = getRandom(array: model.ALL_LEGENDS)
-            }
-            if duos {
-                characterArray = [firstPos,secPos]
-                legendString = characterArray.joined(separator: ", ")
+                
             } else {
-                characterArray = [firstPos,secPos,thirdPos]
-                legendString = characterArray.joined(separator: ", ")
+                
+                // This is the default free version
+                var firstPos: String = getRandom(array: model.ALL_LEGENDS)
+                var secPos: String = getRandom(array: model.ALL_LEGENDS)
+                var thirdPos: String = getRandom(array: model.ALL_LEGENDS)
+                
+                while(firstPos == secPos || firstPos == thirdPos || secPos == thirdPos) {
+                    firstPos = getRandom(array: model.ALL_LEGENDS)
+                    secPos = getRandom(array: model.ALL_LEGENDS)
+                    thirdPos = getRandom(array: model.ALL_LEGENDS)
+                }
+                if duos {
+                    characterArray = [firstPos,secPos]
+                    legendString = characterArray.joined(separator: ", ")
+                } else {
+                    characterArray = [firstPos,secPos,thirdPos]
+                    legendString = characterArray.joined(separator: ", ")
+                }
             }
-        } else {
+            
+        }else {
             legendString = ""
             characterArray = []
         }
+        
+        
         
         if specialsSwitch {
             specialString = getRandom(array: model.SPECIAL)
