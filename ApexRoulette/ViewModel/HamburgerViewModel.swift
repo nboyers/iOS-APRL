@@ -10,6 +10,8 @@ import Foundation
 
 //Class that drives if the user has paid or not
 
-public class HambugerViewModel : ObservableObject  {
-    var isPremuim: Bool = false
+public class InAppPurchaseViewModel : ObservableObject  {
+    var isPremuim: Bool = true
+    
+    
 }

@@ -48,10 +48,10 @@ final class Interstitial: GADInterstitialAd, GADFullScreenContentDelegate {
         print("Ad did dismiss full screen content.")
     }
     func showAd(_ sender: Any){
-        let adOdds = Int.random(in: 0...6)
+        let adOdds = Int.random(in: 1...4)
         let root = UIApplication.shared.windows.first?.rootViewController
         if interstitial != nil {
-           if adOdds % 3 == 0 {
+           if adOdds == 2 {
                 interstitial!.present(fromRootViewController: root!)
            }
         } else {

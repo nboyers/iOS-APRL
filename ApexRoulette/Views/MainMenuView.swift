@@ -16,6 +16,7 @@ struct MainMenuView: View {
     @State var map: String = ""
     @State var duo: Bool = false
     @State var starter: Bool = false
+    @StateObject private var store = InAppPurchaseViewModel()
     
     var body: some View {
         
@@ -38,6 +39,7 @@ struct MainMenuView: View {
                     
                     if self.showMenu {
                         HamburgerView(startLegend: $starter, duos: $duo)
+                            .environmentObject(store)
                             .frame(width: geometry.size.width/2)
                             .transition(.move(edge: .leading))
                     }
