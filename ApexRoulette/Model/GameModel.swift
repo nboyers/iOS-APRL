@@ -33,11 +33,7 @@ struct Gamemodel {
                              "Wattson", "Wraith"]
     
     let DEFAULT_LEGENDS: [String] = ["Bloodhound","Pathfinder","Bangalore","Lifeline","Wraith","Gibraltar"]
-    
-//    let DLC_LEGENDS: [String] = ["Mirage","Octane","Revenant","Horizon","Fuse","Caustic","Wattson","Rampart","Loba"
-//                                 ,"Crypto","Valkyrie","Seer"]
-
-    
+        
     let SPECIAL:[String] = ["You cannot heal until you kill",
                             "Everyone in the squad must solo queue",
                             "Jumpmaster lands somewhere else to others " +

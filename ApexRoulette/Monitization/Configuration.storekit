@@ -5,18 +5,18 @@
   ],
   "products" : [
     {
-      "displayPrice" : "1.49",
+      "displayPrice" : "0.99",
       "familyShareable" : false,
       "internalID" : "0B0AF064",
       "localizations" : [
         {
-          "description" : "",
-          "displayName" : "",
+          "description" : "Duo&Starter Toggle and removes Ads",
+          "displayName" : "Premuim Content",
           "locale" : "en_US"
         }
       ],
-      "productID" : "frent.nobos.rewards",
-      "referenceName" : "Rewards ",
+      "productID" : "frent.nobos.premium_new2",
+      "referenceName" : "Premium",
       "type" : "NonConsumable"
     }
   ],

@@ -35,7 +35,7 @@ struct GameView: View {
                     .foregroundColor(.white)
                     .frame(height: frameHieght)
                 
-                Toggle("DROPZONE", isOn: $viewModel.locationSwitch) //for the map
+                Toggle("DROPZONE", isOn: $viewModel.locationSwitch)
                     .foregroundColor(.white)
                     .padding()
                 
@@ -92,7 +92,7 @@ struct GameView: View {
 
 struct ButtonsGroup: View {
     @ObservedObject var viewModel: RouletteViewModel
-    @Environment(\.presentationMode) var presentationMode
+    @ObservedObject var ads = IAPViewmodel()
     var interstitial: Interstitial = Interstitial()
     
     var body: some View {
@@ -117,8 +117,10 @@ struct ButtonsGroup: View {
             
             Button(action: {
                 viewModel.startGame()
-                interstitial.LoadInterstitial()
-                interstitial.showAd(self)
+                if !ads.isPremium {
+                    interstitial.LoadInterstitial()
+                    interstitial.showAd(self)
+                }
             }, label: {
                 Text("RANDOMIZER")
             }).frame(minWidth: 0, maxWidth: 150)

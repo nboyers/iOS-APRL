@@ -39,6 +39,7 @@ public class RouletteViewModel : ObservableObject  {
     //Model Call
     let model: Gamemodel = Gamemodel()
     
+    
     init(){}
     init(MAP: String, DUO:Bool,STARTERS: Bool){
         mapChoice = MAP

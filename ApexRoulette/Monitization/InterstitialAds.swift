@@ -11,6 +11,7 @@ import UIKit
 final class Interstitial: GADInterstitialAd, GADFullScreenContentDelegate {
     private var interstitial: GADInterstitialAd?
     
+    
     override init() {
         super.init()
         LoadInterstitial()
@@ -23,13 +24,13 @@ final class Interstitial: GADInterstitialAd, GADFullScreenContentDelegate {
         GADInterstitialAd.load(withAdUnitID:"ca-app-pub-3940256099942544/4411468910",
                                request: request,
                                completionHandler: { [self] ad, error in
-                                if let error = error {
-                                    print("Failed to load interstitial ad with error: \(error.localizedDescription)")
-                                    return
-                                }
-                                interstitial = ad ?? nil
-                                interstitial?.fullScreenContentDelegate = self
-                               }
+            if let error = error {
+                print("Failed to load interstitial ad with error: \(error.localizedDescription)")
+                return
+            }
+            interstitial = ad ?? nil
+            interstitial?.fullScreenContentDelegate = self
+        }
         )
     }
     
@@ -50,12 +51,24 @@ final class Interstitial: GADInterstitialAd, GADFullScreenContentDelegate {
     func showAd(_ sender: Any){
         let adOdds = Int.random(in: 1...4)
         let root = UIApplication.shared.windows.first?.rootViewController
+        
         if interstitial != nil {
-           if adOdds == 2 {
+            if adOdds == 2 {
                 interstitial!.present(fromRootViewController: root!)
-           }
+            }
         } else {
             print("Ad wasn't ready")
+        }
+    }
+    
+}
+
+extension UIWindow {
+    static var key: UIWindow? {
+        if #available(iOS 13, *) {
+            return UIApplication.shared.windows.first { $0.isKeyWindow }
+        } else {
+            return UIApplication.shared.keyWindow
         }
     }
 }

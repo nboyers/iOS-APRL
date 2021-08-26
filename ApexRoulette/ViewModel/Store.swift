@@ -13,15 +13,15 @@ import StoreKit
 typealias FetchCompletionhandler  = (([SKProduct]) -> Void)
 typealias PurchaseCompleteHandler = ((SKPaymentTransaction?)-> Void)
 
-public class InAppPurchaseViewModel : NSObject, ObservableObject  {
+public class Store : NSObject, ObservableObject  {
     
     
     @Published var allRecipes = [Recipes]()
     
     private let allProductsIDs = Set([
         "frent.nobos.rewards",
-        "frent.nobos.subcription"
     ])
+    
     private var productRequest: SKProductsRequest?
     private var fetchProducts = [SKProduct]()
     private var fetchCompletionHandler: FetchCompletionhandler?
@@ -74,10 +74,9 @@ public class InAppPurchaseViewModel : NSObject, ObservableObject  {
     }
 }
 
-extension InAppPurchaseViewModel {
+extension Store {
     func product(for id: String ) -> SKProduct? {
         return fetchProducts.first(where: {$0.productIdentifier == id})
-        
     }
     
     func purchaseProduct(_ product: SKProduct){
@@ -85,11 +84,13 @@ extension InAppPurchaseViewModel {
         buy(product) { _ in}
     }
     
-    
+    func restorePurchase(){
+        SKPaymentQueue.default().restoreCompletedTransactions()
+    }
 }
 
 
-extension InAppPurchaseViewModel: SKPaymentTransactionObserver {
+extension Store: SKPaymentTransactionObserver {
     public func paymentQueue(_ queue: SKPaymentQueue, updatedTransactions
                                 transactions: [SKPaymentTransaction]) {
         for transaction in transactions {
@@ -119,7 +120,7 @@ extension InAppPurchaseViewModel: SKPaymentTransactionObserver {
     }
 }
 
-extension InAppPurchaseViewModel: SKProductsRequestDelegate {
+extension Store: SKProductsRequestDelegate {
     public func productsRequest(_ request: SKProductsRequest, didReceive response:
                                     SKProductsResponse) {
         let loadedProducts = response.products
@@ -144,6 +145,4 @@ extension InAppPurchaseViewModel: SKProductsRequestDelegate {
             self.productRequest = nil
         }
     }
-    
-    
 }
