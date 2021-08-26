@@ -117,7 +117,7 @@ struct ButtonsGroup: View {
             
             
             Button(action: {
-                if !adViewmodel.purchasedID.isEmpty {
+                if !adViewmodel.purchasedID.isEmpty { //This isnt working
                     interstitial.LoadInterstitial()
                     interstitial.showAd(self)
                 }
