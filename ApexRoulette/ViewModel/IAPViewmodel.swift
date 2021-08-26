@@ -19,7 +19,7 @@ class IAPViewmodel: ObservableObject {
     func fetchProducts() {
         Task {
             do {
-                let products = try await Product.products(for: ["frent.nobos.premium_new2"])
+                let products = try await Product.products(for: ["frent.nobos.premium_new6"])
                 DispatchQueue.main.async {
                     self.products = products
                 }

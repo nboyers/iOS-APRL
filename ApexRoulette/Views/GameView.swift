@@ -118,8 +118,8 @@ struct ButtonsGroup: View {
             Button(action: {
                 viewModel.startGame()
                 if !ads.isPremium {
-                    interstitial.LoadInterstitial()
-                    interstitial.showAd(self)
+                interstitial.LoadInterstitial()
+                interstitial.showAd(self)
                 }
             }, label: {
                 Text("RANDOMIZER")
