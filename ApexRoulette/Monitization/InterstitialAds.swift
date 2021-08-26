@@ -2,7 +2,7 @@
 //  InterstitialAds.swift
 //  ApexRoulette
 //
-//  Created by Noah Boyers on 7/23/21.
+// Created by Noah Boyers on 8/26/21.
 //
 import SwiftUI
 import GoogleMobileAds
