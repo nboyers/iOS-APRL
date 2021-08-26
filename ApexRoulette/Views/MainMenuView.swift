@@ -8,7 +8,6 @@
 import SwiftUI
 
 
-
 struct MainMenuView: View {
     
     @State var showMenu = false
