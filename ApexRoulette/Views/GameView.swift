@@ -10,6 +10,7 @@ import SwiftUI
 struct GameView: View {
     
     @ObservedObject var viewModel = RouletteViewModel()
+    
     let frameHieght: CGFloat = 10
     
     var body: some View {
@@ -91,8 +92,9 @@ struct GameView: View {
 
 struct ButtonsGroup: View {
     @ObservedObject var viewModel: RouletteViewModel
-    @ObservedObject var adsController = IAPViewmodel()
-    var interstitial: Interstitial = Interstitial()
+    @StateObject var adViewmodel = IAPViewmodel()
+    var interstitial = Interstitial()
+
     
     var body: some View {
         Group {
@@ -115,7 +117,7 @@ struct ButtonsGroup: View {
             
             
             Button(action: {
-                if adsController.purchasedID.isEmpty {
+                if !adViewmodel.purchasedID.isEmpty {
                     interstitial.LoadInterstitial()
                     interstitial.showAd(self)
                 }

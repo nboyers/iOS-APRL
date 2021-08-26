@@ -9,11 +9,10 @@ import StoreKit
 
 struct HamburgerView: View {
     
-    @StateObject var viewmodel = IAPViewmodel()
+    @StateObject var  viewmodel = IAPViewmodel()
     @Binding var startLegend: Bool
     @Binding var duos: Bool
-    
-    
+  
     var body: some View {
         
         GeometryReader { proxy in

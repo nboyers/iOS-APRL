@@ -12,12 +12,17 @@ class IAPViewmodel: ObservableObject {
     
     @Published var products: [Product] = []
     @Published var purchasedID: [String] = []
-    @Published var noAds: Bool = false
-     
+    @Published var ads: Bool = true
+   
+    init()
+    {
+        fetchProducts()
+    }
+    
     func fetchProducts() {
         Task {
             do {
-                let products = try await Product.products(for: ["frent.nobos.pt"])
+                let products = try await Product.products(for: ["frent.nobos.mon"])
                 
                 DispatchQueue.main.async {
                     self.products = products
@@ -25,6 +30,7 @@ class IAPViewmodel: ObservableObject {
                 if let product = products.first {
                     await isPurchased(product: product)
                 }
+               
             }
             catch {
                 print(error)
@@ -36,6 +42,7 @@ class IAPViewmodel: ObservableObject {
         guard let state = await product.currentEntitlement else {
             return
         }
+        
         switch state {
         case .verified(let transaction):
             DispatchQueue.main.async {
@@ -50,19 +57,23 @@ class IAPViewmodel: ObservableObject {
         Task {
             guard let product = products.first else { return }
             do {
+                
                 let result = try await product.purchase()
+                
                 switch result {
                 case .success(let varification):
+                    
                     switch varification {
                     case .verified(let transaction):
                         DispatchQueue.main.async {
                             self.purchasedID.append(transaction.productID)
-                            self.noAds = true
                         }
                         break
+                        
                     case .unverified(_,_):
                         break
                     }
+                    
                 case .userCancelled:
                     break
                 case .pending:
@@ -76,7 +87,6 @@ class IAPViewmodel: ObservableObject {
             }
         }
     }
-
 }
 
 

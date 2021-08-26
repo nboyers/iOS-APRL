@@ -17,6 +17,7 @@ struct MainMenuView: View {
     @State var starter: Bool = false
     
     
+    
     var body: some View {
         
         let drag = DragGesture()
