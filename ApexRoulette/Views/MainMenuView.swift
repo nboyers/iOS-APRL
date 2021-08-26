@@ -2,7 +2,7 @@
 //  ContentView.swift
 //  ApexRoulette
 //  Author Noah Boyers
-//  Updated 08/16/21
+// Created by Noah Boyers on 8/26/21.
 //
 
 import SwiftUI

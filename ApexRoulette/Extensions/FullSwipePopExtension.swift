@@ -2,7 +2,7 @@
 //  FullSwipePopExtension.swift
 //  ApexRoulette
 //
-//  Created by Noah Boyers on 8/14/21.
+// Created by Noah Boyers on 8/26/21.
 //
 
 import SwiftUI
