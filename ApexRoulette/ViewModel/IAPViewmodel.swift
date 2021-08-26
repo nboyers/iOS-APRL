@@ -12,51 +12,52 @@ class IAPViewmodel: ObservableObject {
     
     @Published var products: [Product] = []
     @Published var purchasedID: [String] = []
-    @Published var isPremium: Bool = false
-    
-    
+    @Published var noAds: Bool = false
+     
     func fetchProducts() {
         Task {
             do {
-                let products = try await Product.products(for: ["frent.nobos.premium_new6"])
+                let products = try await Product.products(for: ["frent.nobos.pt"])
+                
                 DispatchQueue.main.async {
                     self.products = products
                 }
                 if let product = products.first {
                     await isPurchased(product: product)
                 }
-            }catch {
+            }
+            catch {
                 print(error)
             }
         }
     }
     
     func isPurchased(product: Product) async {
-        guard let state = await product.currentEntitlement else { return }
-        
+        guard let state = await product.currentEntitlement else {
+            return
+        }
         switch state {
         case .verified(let transaction):
             DispatchQueue.main.async {
                 self.purchasedID.append(transaction.productID)
-                self.isPremium = true
             }
         case .unverified(_, _):
             break
         }
     }
+    
     func purchase()  {
         Task {
             guard let product = products.first else { return }
             do {
                 let result = try await product.purchase()
-                
                 switch result {
                 case .success(let varification):
                     switch varification {
                     case .verified(let transaction):
                         DispatchQueue.main.async {
                             self.purchasedID.append(transaction.productID)
-                            self.isPremium = true
+                            self.noAds = true
                         }
                         break
                     case .unverified(_,_):

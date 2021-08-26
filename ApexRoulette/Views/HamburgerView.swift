@@ -7,7 +7,6 @@
 import SwiftUI
 import StoreKit
 
-
 struct HamburgerView: View {
     
     @StateObject var viewmodel = IAPViewmodel()
@@ -34,7 +33,7 @@ struct HamburgerView: View {
                         .foregroundColor(.gray)
                         .imageScale(.large)
                     
-                    if viewmodel.products.first != nil {
+                    
                         Button(action:{
                             if viewmodel.purchasedID.isEmpty {
                                 viewmodel.purchase()
@@ -43,9 +42,8 @@ struct HamburgerView: View {
                             Text(viewmodel.purchasedID.isEmpty ? "Premium" : "Thank You")
                                 .foregroundColor(.gray)
                                 .font(.headline)
-                            
-                        }.disabled(viewmodel.isPremium)
-                    }
+                        }.disabled(!viewmodel.purchasedID.isEmpty)
+                    
                 }.padding(.top, 30)
                 
                 
@@ -54,14 +52,14 @@ struct HamburgerView: View {
                 VStack {
                     Toggle("Starter Legends", isOn: $startLegend)
                         .frame(width: proxy.size.width / 1.5)
-                        .disabled(!viewmodel.isPremium)
+                        .disabled(viewmodel.purchasedID.isEmpty)
                         .foregroundColor(.gray)
                         .padding(.top, 30)
                     
                     
                     Toggle("Duos", isOn: $duos)
                         .frame(width: proxy.size.width / 1.5)
-                        .disabled(!viewmodel.isPremium)
+                        .disabled(viewmodel.purchasedID.isEmpty)
                         .foregroundColor(.gray)
                         .padding(.top, 30)
                 }
@@ -77,7 +75,6 @@ struct HamburgerView: View {
         }
     }
 }
-
 struct HamburgerView_Previews: PreviewProvider {
     static var previews: some View {
         MainMenuView()

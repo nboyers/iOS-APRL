@@ -91,7 +91,7 @@ struct GameView: View {
 
 struct ButtonsGroup: View {
     @ObservedObject var viewModel: RouletteViewModel
-    @ObservedObject var ads = IAPViewmodel()
+    @ObservedObject var adsController = IAPViewmodel()
     var interstitial: Interstitial = Interstitial()
     
     var body: some View {
@@ -115,11 +115,11 @@ struct ButtonsGroup: View {
             
             
             Button(action: {
-                viewModel.startGame()
-                if !ads.isPremium {
-                interstitial.LoadInterstitial()
-                interstitial.showAd(self)
+                if adsController.purchasedID.isEmpty {
+                    interstitial.LoadInterstitial()
+                    interstitial.showAd(self)
                 }
+                viewModel.startGame()
             }, label: {
                 Text("RANDOMIZER")
             }).frame(minWidth: 0, maxWidth: 150)
