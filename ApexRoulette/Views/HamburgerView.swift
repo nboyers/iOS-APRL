@@ -12,36 +12,38 @@ struct HamburgerView: View {
     @StateObject var  viewmodel = Store()
     @Binding var startLegend: Bool
     @Binding var duos: Bool
-  
+    @State var nothing: Bool = false
+    
     var body: some View {
         
         GeometryReader { proxy in
             VStack(alignment: .leading) {
                 HStack {
-                    Image(systemName: "star.fill")
+                    Image(systemName: "questionmark.circle.fill")
                         .foregroundColor(.gray)
                         .imageScale(.large)
-                    Text("Rating")
-                        .foregroundColor(.gray)
+                    
+                    Button("Mystery") {
+                        nothing.toggle()
+                    }.foregroundColor(.gray)
                         .font(.headline)
-                }
-                .padding(.top, 100)
-                
+                        
+                }.padding(.top, 100)
                 HStack {
                     Image(systemName: "dollarsign.square.fill")
                         .foregroundColor(.gray)
                         .imageScale(.large)
                     
                     
-                        Button(action:{
-                            if viewmodel.purchasedID.isEmpty {
-                                viewmodel.purchase()
-                            }
-                        }) {
-                            Text(viewmodel.purchasedID.isEmpty ? "Premium" : "Thank You")
-                                .foregroundColor(.gray)
-                                .font(.headline)
-                        }.disabled(!viewmodel.purchasedID.isEmpty)
+                    Button(action:{
+                        if viewmodel.purchasedID.isEmpty {
+                            viewmodel.purchase()
+                        }
+                    }) {
+                        Text(viewmodel.purchasedID.isEmpty ? "Premium" : "Thank You")
+                            .foregroundColor(.gray)
+                            .font(.headline)
+                    }.disabled(!viewmodel.purchasedID.isEmpty)
                     
                 }.padding(.top, 30)
                 
