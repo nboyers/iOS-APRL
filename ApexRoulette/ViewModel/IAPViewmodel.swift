@@ -22,7 +22,7 @@ class IAPViewmodel: ObservableObject {
     func fetchProducts() {
         Task {
             do {
-                let products = try await Product.products(for: ["frent.nobos.mon"])
+                let products = try await Product.products(for: ["frent.nobos.money01"])
                 
                 DispatchQueue.main.async {
                     self.products = products
@@ -57,7 +57,6 @@ class IAPViewmodel: ObservableObject {
         Task {
             guard let product = products.first else { return }
             do {
-                
                 let result = try await product.purchase()
                 
                 switch result {
