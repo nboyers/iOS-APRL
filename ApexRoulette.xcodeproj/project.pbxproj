@@ -14,7 +14,7 @@
 		DF66616426C426E700E9531D /* HamburgerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF66616326C426E700E9531D /* HamburgerView.swift */; };
 		DF6B088626AAF15000E111BC /* InterstitialAds.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6B088526AAF15000E111BC /* InterstitialAds.swift */; };
 		DF7BCC3526C8A40700E617BA /* FullSwipePopExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF7BCC3426C8A40700E617BA /* FullSwipePopExtension.swift */; };
-		DFE8520D26D72220002B0877 /* IAPViewmodel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFE8520C26D72220002B0877 /* IAPViewmodel.swift */; };
+		DFB4906226D9737700FE0DBA /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFB4906126D9737700FE0DBA /* Store.swift */; };
 		DFEDDF972686121B008D208D /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEDDF962686121B008D208D /* GameView.swift */; };
 		DFEDDF9926861231008D208D /* RouletteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFEDDF9826861231008D208D /* RouletteViewModel.swift */; };
 		DFF0CC14267FAD1E0053711B /* ApexRouletteApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFF0CC13267FAD1E0053711B /* ApexRouletteApp.swift */; };
@@ -35,7 +35,7 @@
 		DF6B088526AAF15000E111BC /* InterstitialAds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterstitialAds.swift; sourceTree = "<group>"; };
 		DF7BCC3426C8A40700E617BA /* FullSwipePopExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullSwipePopExtension.swift; sourceTree = "<group>"; };
 		DFA6DEA326D2C08C00BBF480 /* Configuration.storekit */ = {isa = PBXFileReference; lastKnownFileType = text; path = Configuration.storekit; sourceTree = "<group>"; };
-		DFE8520C26D72220002B0877 /* IAPViewmodel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPViewmodel.swift; sourceTree = "<group>"; };
+		DFB4906126D9737700FE0DBA /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		DFEDDF962686121B008D208D /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		DFEDDF9826861231008D208D /* RouletteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouletteViewModel.swift; sourceTree = "<group>"; };
 		DFF0CC10267FAD1E0053711B /* ApexRoulette.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ApexRoulette.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -156,7 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				DFEDDF9826861231008D208D /* RouletteViewModel.swift */,
-				DFE8520C26D72220002B0877 /* IAPViewmodel.swift */,
+				DFB4906126D9737700FE0DBA /* Store.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -299,8 +299,8 @@
 			files = (
 				DFF0CC16267FAD1E0053711B /* MainMenuView.swift in Sources */,
 				DFEDDF9926861231008D208D /* RouletteViewModel.swift in Sources */,
-				DFE8520D26D72220002B0877 /* IAPViewmodel.swift in Sources */,
 				DF6B088626AAF15000E111BC /* InterstitialAds.swift in Sources */,
+				DFB4906226D9737700FE0DBA /* Store.swift in Sources */,
 				DFF0CC14267FAD1E0053711B /* ApexRouletteApp.swift in Sources */,
 				DF7BCC3526C8A40700E617BA /* FullSwipePopExtension.swift in Sources */,
 				DF66616426C426E700E9531D /* HamburgerView.swift in Sources */,

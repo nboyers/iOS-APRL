@@ -92,7 +92,7 @@ struct GameView: View {
 
 struct ButtonsGroup: View {
     @ObservedObject var viewModel: RouletteViewModel
-    @StateObject var adViewmodel = IAPViewmodel()
+    @StateObject var adViewmodel = Store()
     var interstitial = Interstitial()
 
     

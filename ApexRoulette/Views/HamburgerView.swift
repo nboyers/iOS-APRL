@@ -9,7 +9,7 @@ import StoreKit
 
 struct HamburgerView: View {
     
-    @StateObject var  viewmodel = IAPViewmodel()
+    @StateObject var  viewmodel = Store()
     @Binding var startLegend: Bool
     @Binding var duos: Bool
   
