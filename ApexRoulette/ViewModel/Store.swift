@@ -7,7 +7,7 @@
 import StoreKit
 import SwiftUI
 
-class Store: ObservableObject {
+class Store: UIViewController, ObservableObject  {
     
     @Published var products: [Product] = []
     @Published var purchasedID: [String] = []
@@ -39,12 +39,10 @@ class Store: ObservableObject {
         
         switch state {
         case .verified(let transaction):
-            print("Verified")
             DispatchQueue.main.async {
                 self.purchasedID.append(transaction.productID)
             }
         case .unverified(_, _):
-            print("Not Verified")
             break
         }
     }
