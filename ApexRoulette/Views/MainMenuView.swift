@@ -7,7 +7,6 @@
 
 import SwiftUI
 
-
 struct MainMenuView: View {
     
     @State var showMenu = false
@@ -45,17 +44,17 @@ struct MainMenuView: View {
                 }
                 
                 .navigationBarItems(leading: (
-                                        Button(action: {
-                                            withAnimation {
-                                                self.showMenu.toggle()
-                                                duo = duo
-                                            }
-                                        }) {
-                                            Image(systemName: "line.horizontal.3")
-                                                .imageScale(.large)
-                                                .font(.system(size: 25, weight: .heavy))
-                                                .foregroundColor(.gray)
-                                        }))
+                    Button(action: {
+                        withAnimation {
+                            self.showMenu.toggle()
+                            duo = duo
+                        }
+                    }) {
+                        Image(systemName: "line.horizontal.3")
+                            .imageScale(.large)
+                            .font(.system(size: 25, weight: .heavy))
+                            .foregroundColor(.gray)
+                    }))
                 .gesture(drag)
             }
         }.fullSwipePop(show: $showPop){
@@ -71,6 +70,7 @@ struct MainMenuView: View {
 struct CompleteView: View {
     @Binding var showPop: Bool
     @Binding var map: String
+    let button = UIButton(frame: CGRect(x: 0, y: 0, width: 200, height: 50))
     
     var body: some View {
         NavigationView {
@@ -127,6 +127,7 @@ struct CompleteView: View {
                             .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
         }
     }
+
 }
 
 struct MainMenuView_Previews: PreviewProvider {
