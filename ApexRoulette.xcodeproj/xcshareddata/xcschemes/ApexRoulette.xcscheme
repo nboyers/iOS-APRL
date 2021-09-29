@@ -50,9 +50,6 @@
             ReferencedContainer = "container:ApexRoulette.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
-      <StoreKitConfigurationFileReference
-         identifier = "../ApexRoulette/Monitization/Configuration.storekit">
-      </StoreKitConfigurationFileReference>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"

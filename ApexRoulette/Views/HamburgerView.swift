@@ -18,37 +18,26 @@ struct HamburgerView: View {
         
         GeometryReader { proxy in
             VStack(alignment: .leading) {
+                Spacer().frame(height: proxy.size.height * 0.15)
+                
                 HStack {
-                    Image(systemName: "questionmark.circle.fill")
+                    Image(systemName: viewmodel.purchasedID.isEmpty ? "dollarsign.square.fill" : "arrow.2.squarepath")
                         .foregroundColor(.gray)
                         .imageScale(.large)
-                    
-                    Button("Mystery") {
-                        nothing.toggle()
-                    }.foregroundColor(.gray)
-                        .font(.headline)
-                        
-                }.padding(.top, 100)
-                HStack {
-                    Image(systemName: "dollarsign.square.fill")
-                        .foregroundColor(.gray)
-                        .imageScale(.large)
-                    
                     
                     Button(action:{
                         if viewmodel.purchasedID.isEmpty {
                             viewmodel.purchase()
+                        } else {
+                            viewmodel.fetchProducts()
                         }
                     }) {
-                        Text(viewmodel.purchasedID.isEmpty ? "Premium" : "Thank You")
+                        Text(viewmodel.purchasedID.isEmpty ? "Premium" : "Retore Purchase")
                             .foregroundColor(.gray)
                             .font(.headline)
-                    }.disabled(!viewmodel.purchasedID.isEmpty)
+                    }
                     
                 }.padding(.top, 30)
-                
-                
-                
                 
                 VStack {
                     Toggle("Starter Legends", isOn: $startLegend)
@@ -74,6 +63,7 @@ struct HamburgerView: View {
         .onAppear {
             viewmodel.fetchProducts()
         }
+       
     }
 }
 struct HamburgerView_Previews: PreviewProvider {

@@ -44,8 +44,6 @@ struct GameView: View {
                     .frame(height: frameHieght)
                 
             }
-            
-            
             Group {
                 Toggle("GEAR", isOn: $viewModel.gearSwitch)
                     .foregroundColor(.white)
@@ -55,7 +53,7 @@ struct GameView: View {
                     .foregroundColor(.white)
                     .fixedSize(horizontal: false, vertical: true)
                 
-                Toggle("LEGENDS", isOn: $viewModel.legendSwitch) 
+                Toggle("LEGENDS", isOn: $viewModel.legendSwitch)
                     .foregroundColor(.white)
                     .padding()
                 
@@ -94,7 +92,7 @@ struct ButtonsGroup: View {
     @ObservedObject var viewModel: RouletteViewModel
     @StateObject var adViewmodel = Store()
     var interstitial = Interstitial()
-
+    
     
     var body: some View {
         Group {
@@ -105,35 +103,43 @@ struct ButtonsGroup: View {
             }, label: {
                 Text("RESET")
             })
-            .frame(minWidth: 0, maxWidth: 150)
-            .font(Font.custom("blocktastic", size: 30))
-            .padding()
-            .foregroundColor(.white)
-            .overlay(
-                RoundedRectangle(cornerRadius: 25)
-                    .stroke(Color.white, lineWidth: 3))
+                .frame(minWidth: 0, maxWidth: 150)
+                .font(Font.custom("blocktastic", size: 30))
+                .padding()
+                .foregroundColor(.white)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 25)
+                        .stroke(Color.white, lineWidth: 3))
             
             Spacer().frame(height: 30)
             
             
+            
             Button(action: {
-                if adViewmodel.purchasedID.isEmpty { 
-                    interstitial.LoadInterstitial()
-                    interstitial.showAd(self)
+                let seconds = 5.0
+                
+                if adViewmodel.purchasedID.isEmpty  {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+                        self.retriveAds()
+                    }
                 }
                 viewModel.startGame()
             }, label: {
                 Text("RANDOMIZER")
             }).frame(minWidth: 0, maxWidth: 150)
-            .font(Font.custom("blocktastic", size: 30))
-            .padding()
-            .foregroundColor(.white)
-            .overlay(
-                RoundedRectangle(cornerRadius: 25)
-                    .stroke(Color.white, lineWidth: 3))
+                .font(Font.custom("blocktastic", size: 30))
+                .padding()
+                .foregroundColor(.white)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 25)
+                        .stroke(Color.white, lineWidth: 3))
             Spacer()
         }
+    }
+    func retriveAds() {
         
+        interstitial.LoadInterstitial()
+        interstitial.showAd(self)
     }
     
 }

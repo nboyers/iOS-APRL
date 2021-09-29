@@ -17,7 +17,7 @@ extension View {
 
 
 // Helper Function to build view
-private struct FullSwipePopHelper<MainContent: View,Content: View>: View {
+private struct FullSwipePopHelper<MainContent: View, Content: View>: View {
     
     //Where our main content will be our main view
     // since we are moving our main left when the overlay shows

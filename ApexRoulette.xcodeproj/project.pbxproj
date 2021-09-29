@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		BE0AD41CB075376DA389A20D /* Pods_ApexRoulette.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85469BDEC50BB4F935D14ABD /* Pods_ApexRoulette.framework */; };
+		DF04A3412702705300F7A3CC /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DF04A3402702705300F7A3CC /* StoreKit.framework */; };
 		DF05DCAD26865DE000443412 /* duke_fill.otf in Resources */ = {isa = PBXBuildFile; fileRef = DF05DCAA26865DE000443412 /* duke_fill.otf */; };
 		DF05DCAE26865DE000443412 /* blocktastic.otf in Resources */ = {isa = PBXBuildFile; fileRef = DF05DCAB26865DE000443412 /* blocktastic.otf */; };
 		DF05DCAF26865DE000443412 /* blocktastic_itl.otf in Resources */ = {isa = PBXBuildFile; fileRef = DF05DCAC26865DE000443412 /* blocktastic_itl.otf */; };
@@ -28,6 +29,7 @@
 		0B77B34799660E15DCD3C482 /* Pods-ApexRoulette.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApexRoulette.release.xcconfig"; path = "Target Support Files/Pods-ApexRoulette/Pods-ApexRoulette.release.xcconfig"; sourceTree = "<group>"; };
 		812440E7973D2DEBB015974E /* Pods-ApexRoulette.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ApexRoulette.debug.xcconfig"; path = "Target Support Files/Pods-ApexRoulette/Pods-ApexRoulette.debug.xcconfig"; sourceTree = "<group>"; };
 		85469BDEC50BB4F935D14ABD /* Pods_ApexRoulette.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ApexRoulette.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DF04A3402702705300F7A3CC /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		DF05DCAA26865DE000443412 /* duke_fill.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = duke_fill.otf; sourceTree = "<group>"; };
 		DF05DCAB26865DE000443412 /* blocktastic.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = blocktastic.otf; sourceTree = "<group>"; };
 		DF05DCAC26865DE000443412 /* blocktastic_itl.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = blocktastic_itl.otf; sourceTree = "<group>"; };
@@ -53,6 +55,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE0AD41CB075376DA389A20D /* Pods_ApexRoulette.framework in Frameworks */,
+				DF04A3412702705300F7A3CC /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +65,7 @@
 		1850BAFA119220B1C3B06E29 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DF04A3402702705300F7A3CC /* StoreKit.framework */,
 				85469BDEC50BB4F935D14ABD /* Pods_ApexRoulette.framework */,
 			);
 			name = Frameworks;
@@ -363,7 +367,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -418,7 +422,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -435,6 +439,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"ApexRoulette/Preview Content\"";
 				DEVELOPMENT_TEAM = JCL982F3T2;
 				ENABLE_PREVIEWS = YES;
@@ -444,7 +449,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.0.1;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = frent.nobos.ApexRoulette;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -459,6 +464,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"ApexRoulette/Preview Content\"";
 				DEVELOPMENT_TEAM = JCL982F3T2;
 				ENABLE_PREVIEWS = YES;
@@ -468,7 +474,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.0.1;
+				MARKETING_VERSION = 1.0.0;
 				PRODUCT_BUNDLE_IDENTIFIER = frent.nobos.ApexRoulette;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

@@ -10,8 +10,10 @@ import SwiftUI
 @main
 struct ApexRouletteApp: App {
     var body: some Scene {
+        
         WindowGroup {
             MainMenuView()
+            
         }
     }
 }

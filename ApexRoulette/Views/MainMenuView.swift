@@ -84,7 +84,7 @@ struct CompleteView: View {
                     //Distance from the button to Text
                     
                     Spacer()
-                        .frame(height: geo.size.height*0.55)
+                        .frame(height: geo.size.height*0.5)
                     
                     //Distance inbetween the buttons
                     
@@ -101,6 +101,12 @@ struct CompleteView: View {
                             map = "WORLD'S EDGE"
                         }) {
                             Text("WORLD'S EDGE")
+                        }
+                        Button(action: {
+                            self.showPop.toggle()
+                            map = "Kings Canyon"
+                        }) {
+                            Text("Kings Canyon")
                         }
                     }
                     .frame(minWidth: 0, maxWidth: 200)

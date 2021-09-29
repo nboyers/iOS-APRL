@@ -59,6 +59,8 @@ public class RouletteViewModel : ObservableObject  {
             case "WORLD'S EDGE":
                 dropZoneString = getRandom(array: model.WORLDS_EDGE)
                 break;
+            case "Kings Canyon":
+                dropZoneString = getRandom(array: model.KINGS_CANYON)
             default:
                 dropZoneString = ""
             }
