@@ -7,6 +7,9 @@
 import SwiftUI
 import GoogleMobileAds
 import UIKit
+import AppTrackingTransparency
+import AdSupport
+
 
 final class Interstitial: GADInterstitialAd, GADFullScreenContentDelegate {
     private var interstitial: GADInterstitialAd?
@@ -14,12 +17,16 @@ final class Interstitial: GADInterstitialAd, GADFullScreenContentDelegate {
     
     override init() {
         super.init()
-        LoadInterstitial()
+        requestIDFA()
     }
     
+    func requestIDFA() {
+        ATTrackingManager.requestTrackingAuthorization(completionHandler: { [self] status in
+            self.LoadInterstitial()
+      })
+    }
+
     func LoadInterstitial(){
-        
-        //TEST ID IN THE LOADED ADS
         let request = GADRequest()
         GADInterstitialAd.load(withAdUnitID:"ca-app-pub-7542723422099323/2747333409",
                                request: request,

@@ -137,7 +137,6 @@ struct ButtonsGroup: View {
         }
     }
     func retriveAds() {
-        
         interstitial.LoadInterstitial()
         interstitial.showAd(self)
     }
