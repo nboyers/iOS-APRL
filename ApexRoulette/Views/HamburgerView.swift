@@ -32,8 +32,11 @@ struct HamburgerView: View {
                         if viewmodel.purchasedID.isEmpty {
                             viewmodel.purchase()
                         } else {
-                            viewmodel.fetchProducts()
+                            restoreAlert = true
                         }
+                    }
+                    .alert("You've already bought premium", isPresented: $restoreAlert) {
+                        Button("OK", role: .cancel) {}
                     }
                     .foregroundColor(.gray)
                     .font(.headline)

@@ -15,8 +15,6 @@ struct MainMenuView: View {
     @State var duo: Bool = false
     @State var starter: Bool = false
     
-    
-    
     var body: some View {
         
         let drag = DragGesture()
@@ -70,6 +68,7 @@ struct MainMenuView: View {
 struct CompleteView: View {
     @Binding var showPop: Bool
     @Binding var map: String
+    @StateObject var adViewmodel = Store()
     let button = UIButton(frame: CGRect(x: 0, y: 0, width: 200, height: 50))
     
     var body: some View {
@@ -90,6 +89,7 @@ struct CompleteView: View {
                     
                     Group {
                         Button(action: {
+                            adViewmodel.fetchProducts()
                             self.showPop.toggle()
                             map = "OLYMPUS"
                             
@@ -97,12 +97,14 @@ struct CompleteView: View {
                             Text("OLYMPUS")
                         }
                         Button(action: {
+                            adViewmodel.fetchProducts()
                             self.showPop.toggle()
                             map = "WORLD'S EDGE"
                         }) {
                             Text("WORLD'S EDGE")
                         }
                         Button(action: {
+                            adViewmodel.fetchProducts()
                             self.showPop.toggle()
                             map = "Kings Canyon"
                         }) {

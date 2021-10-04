@@ -117,7 +117,7 @@ struct ButtonsGroup: View {
             
             Button("RANDOMIZER") {
                 let seconds = 5.0
-                if adViewmodel.purchasedID.isEmpty  {
+                if adViewmodel.purchasedID.isEmpty {
                     DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
                         self.retriveAds()
                     }
