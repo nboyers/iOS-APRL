@@ -115,39 +115,29 @@ struct ButtonsGroup: View {
             
             
             
-            Button(action: {
+            Button("RANDOMIZER") {
                 let seconds = 5.0
-                
                 if adViewmodel.purchasedID.isEmpty  {
                     DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
                         self.retriveAds()
                     }
                 }
                 viewModel.startGame()
-            }, label: {
-                Text("RANDOMIZER")
-            }).frame(minWidth: 0, maxWidth: 150)
+            }.frame(minWidth: 0, maxWidth: 150)
                 .font(Font.custom("blocktastic", size: 30))
                 .padding()
                 .foregroundColor(.white)
                 .overlay(
                     RoundedRectangle(cornerRadius: 25)
                         .stroke(Color.white, lineWidth: 3))
-            Spacer()
         }
+        
+        Spacer()
     }
+    
     func retriveAds() {
         interstitial.LoadInterstitial()
         interstitial.showAd(self)
     }
-    
 }
 
-
-
-
-struct GameView_Previews: PreviewProvider {
-    static var previews: some View {
-        GameView()
-    }
-}

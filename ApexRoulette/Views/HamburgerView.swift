@@ -13,6 +13,7 @@ struct HamburgerView: View {
     @Binding var startLegend: Bool
     @Binding var duos: Bool
     @State private var showingAlert = false
+    @State private var restoreAlert = false
     
     
     var body: some View {
@@ -36,7 +37,6 @@ struct HamburgerView: View {
                     }
                     .foregroundColor(.gray)
                     .font(.headline)
-                    .disabled(!viewmodel.products.isEmpty)
                     
                 }.padding(.top, 30)
                 
@@ -55,14 +55,12 @@ struct HamburgerView: View {
                             showingAlert = true
                         }
                     }
+                    .disabled(viewmodel.purchasedID.isEmpty)
                     .foregroundColor(.gray)
                         .font(.headline)
                         .alert("Purchase Restored!", isPresented: $showingAlert) {
                             Button("OK", role: .cancel) {}
                         }
-                        .disabled(viewmodel.products.isEmpty)
-                    
-                    
                     }.padding(.top,30.0)
                     
                     
@@ -81,6 +79,7 @@ struct HamburgerView: View {
                             .foregroundColor(.gray)
                             .padding(.top, 30)
                     }
+                
                     Spacer()
                 }
                 .padding()
@@ -94,8 +93,3 @@ struct HamburgerView: View {
         }
     }
 
-struct HamburgerView_Previews: PreviewProvider {
-    static var previews: some View {
-        MainMenuView()
-    }
-}
