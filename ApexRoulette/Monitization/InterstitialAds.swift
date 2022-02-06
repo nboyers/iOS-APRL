@@ -11,6 +11,7 @@ import AppTrackingTransparency
 import AdSupport
 
 
+
 final class Interstitial: GADInterstitialAd, GADFullScreenContentDelegate {
     private var interstitial: GADInterstitialAd?
     
@@ -22,10 +23,9 @@ final class Interstitial: GADInterstitialAd, GADFullScreenContentDelegate {
     
     func requestIDFA() {
         ATTrackingManager.requestTrackingAuthorization(completionHandler: { [self] status in
-            self.LoadInterstitial()
-      })
+            LoadInterstitial()
+        })
     }
-
     func LoadInterstitial(){
         let request = GADRequest()
         GADInterstitialAd.load(withAdUnitID:"ca-app-pub-7542723422099323/2747333409",
@@ -37,8 +37,7 @@ final class Interstitial: GADInterstitialAd, GADFullScreenContentDelegate {
             }
             interstitial = ad ?? nil
             interstitial?.fullScreenContentDelegate = self
-        }
-        )
+        })
     }
     
     /// Tells the delegate that the ad failed to present full screen content.
@@ -47,7 +46,7 @@ final class Interstitial: GADInterstitialAd, GADFullScreenContentDelegate {
     }
     
     /// Tells the delegate that the ad presented full screen content.
-    func adDidPresentFullScreenContent(_ ad: GADFullScreenPresentingAd) {
+    func adWillPresentFullScreenContent(_ ad: GADFullScreenPresentingAd) {
         print("Ad did present full screen content.")
     }
     
@@ -56,31 +55,15 @@ final class Interstitial: GADInterstitialAd, GADFullScreenContentDelegate {
         print("Ad did dismiss full screen content.")
     }
     func showAd(_ sender: Any){
-        let adOdds = Int.random(in: 1...4)
         let root = UIApplication.shared.windows.first?.rootViewController
         
         if interstitial != nil {
-            if adOdds == 2 {
-                interstitial!.present(fromRootViewController: root!)
-            }
+            interstitial!.present(fromRootViewController: root!)
         } else {
             print("Ad wasn't ready")
+            return
         }
     }
     
 }
 
-extension UIWindow {
-    static var key: UIWindow? {
-        if #available(iOS 13, *) {
-            return UIApplication.shared.connectedScenes
-                .filter({$0.activationState == .foregroundActive})
-                .map({$0 as? UIWindowScene})
-                .compactMap({$0})
-                .first?.windows
-                .filter({$0.isKeyWindow}).first
-        } else {
-            return UIApplication.shared.keyWindow
-        }
-    }
-}

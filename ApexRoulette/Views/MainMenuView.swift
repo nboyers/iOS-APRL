@@ -1,9 +1,3 @@
-//
-//  ContentView.swift
-//  ApexRoulette
-//  Author Noah Boyers
-// Created by Noah Boyers on 8/26/21.
-//
 
 import SwiftUI
 
@@ -83,44 +77,64 @@ struct CompleteView: View {
                     //Distance from the button to Text
                     
                     Spacer()
-                        .frame(height: geo.size.height*0.5)
+                        .frame(height: geo.size.height * 0.5)
                     
                     //Distance inbetween the buttons
-                    
-                    Group {
-                        Button(action: {
-                            adViewmodel.fetchProducts()
-                            self.showPop.toggle()
-                            map = "OLYMPUS"
-                            
-                        }) {
-                            Text("OLYMPUS")
+                    HStack {
+                        VStack {
+                            Group {
+                                Button(action: {
+                                    adViewmodel.fetchProducts()
+                                    self.showPop.toggle()
+                                    map = "OLYMPUS"
+                                    
+                                }) {
+                                    Text("OLYMPUS")
+                                }
+                                Button(action: {
+                                    adViewmodel.fetchProducts()
+                                    self.showPop.toggle()
+                                    map = "WORLD'S EDGE"
+                                }) {
+                                    Text("WORLD'S EDGE")
+                                }
+                                
+                            }
+                            .frame(maxWidth: 200)
+                                .font(Font.custom("blocktastic", size: 25))
+                                .padding()
+                                .foregroundColor(.white)
+                                .overlay(RoundedRectangle(cornerRadius: 25)
+                                            .stroke(Color.white, lineWidth: 3))
                         }
-                        Button(action: {
-                            adViewmodel.fetchProducts()
-                            self.showPop.toggle()
-                            map = "WORLD'S EDGE"
-                        }) {
-                            Text("WORLD'S EDGE")
-                        }
-                        Button(action: {
-                            adViewmodel.fetchProducts()
-                            self.showPop.toggle()
-                            map = "Kings Canyon"
-                        }) {
-                            Text("Kings Canyon")
+            
+                        VStack {
+                            Group {
+                                Button(action: {
+                                    adViewmodel.fetchProducts()
+                                    self.showPop.toggle()
+                                    map = "Kings Canyon"
+                                }) {
+                                    Text("Kings Canyon")
+                                }
+                                Button(action: {
+                                    adViewmodel.fetchProducts()
+                                    self.showPop.toggle()
+                                    map = "Storm Point"
+                                }) {
+                                    Text("Storm Point")
+                                }
+                            }.frame(maxWidth: 200)
+                                .font(Font.custom("blocktastic", size: 25))
+                                .padding()
+                                .foregroundColor(.white)
+                                .overlay(RoundedRectangle(cornerRadius: 25)
+                                            .stroke(Color.white, lineWidth: 3))
                         }
                     }
-                    .frame(minWidth: 0, maxWidth: 200)
-                    .font(Font.custom("blocktastic", size: 30))
-                    .padding()
-                    .foregroundColor(.white)
-                    .overlay(RoundedRectangle(cornerRadius: 25)
-                                .stroke(Color.white, lineWidth: 3))
-                    
                     //Final Spacer at the bottom
                     Spacer()
-                        .frame(height: geo.size.height/0.5)
+                        .frame(height: geo.size.height/0.3)
                     
                 }
             }.background(Image("main_menu")
@@ -129,7 +143,7 @@ struct CompleteView: View {
                             .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
         }
     }
-
+    
 }
 
 struct MainMenuView_Previews: PreviewProvider {

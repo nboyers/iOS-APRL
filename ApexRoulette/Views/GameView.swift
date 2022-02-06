@@ -10,9 +10,9 @@ import SwiftUI
 struct GameView: View {
     
     @ObservedObject var viewModel = RouletteViewModel()
-    
+    @ObservedObject var  store = Store()
     let frameHieght: CGFloat = 10
-    
+    @State var live : Bool = true
     var body: some View {
         
         VStack {
@@ -71,17 +71,15 @@ struct GameView: View {
                     .foregroundColor(.white)
                     .fixedSize(horizontal: false, vertical: true)
             }
-            
-            
             Spacer()
             ButtonsGroup(viewModel: viewModel)
-            Spacer()
-            
+            if store.purchasedID.isEmpty {
+                Banner()
+            }
         }
         .background(Image("game_view")
                         .resizable()
                         .edgesIgnoringSafeArea(.all))
-        
     }
     
 }
@@ -91,14 +89,16 @@ struct GameView: View {
 struct ButtonsGroup: View {
     @ObservedObject var viewModel: RouletteViewModel
     @StateObject var adViewmodel = Store()
-    var interstitial = Interstitial()
-    
-    
+    @State var showIntersitialAd : Bool = false
+    var IA = Interstitial()
     var body: some View {
+        let adLuck = Int.random(in: 0...4)
         Group {
-            
             Button(action: {
                 viewModel.resetButton()
+                if adLuck == 2  {
+                    IA.showAd(self)
+                }
                 
             }, label: {
                 Text("RESET")
@@ -113,31 +113,18 @@ struct ButtonsGroup: View {
             
             Spacer().frame(height: 30)
             
-            
-            
+
             Button("RANDOMIZER") {
-                let seconds = 5.0
-                if adViewmodel.purchasedID.isEmpty {
-                    DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
-                        self.retriveAds()
-                    }
-                }
                 viewModel.startGame()
-            }.frame(minWidth: 0, maxWidth: 150)
-                .font(Font.custom("blocktastic", size: 30))
-                .padding()
-                .foregroundColor(.white)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 25)
+            }
+            .frame(minWidth: 0, maxWidth: 150)
+            .font(Font.custom("blocktastic", size: 30))
+            .padding()
+            .foregroundColor(.white)
+            .overlay(RoundedRectangle(cornerRadius: 25)
                         .stroke(Color.white, lineWidth: 3))
         }
-        
         Spacer()
-    }
-    
-    func retriveAds() {
-        interstitial.LoadInterstitial()
-        interstitial.showAd(self)
+        
     }
 }
-
