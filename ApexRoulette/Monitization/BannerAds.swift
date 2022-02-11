@@ -14,13 +14,13 @@ import AdSupport
 final private class BannerVC: UIViewControllerRepresentable  {
 
     func makeUIViewController(context: Context) -> UIViewController {
-        let view = GADBannerView(adSize: kGADAdSizeSmartBannerPortrait)
+        let view = GADBannerView(adSize: GADAdSizeBanner)
 
         let viewController = UIViewController()
         view.adUnitID = "ca-app-pub-7542723422099323/3228985376"
         view.rootViewController = viewController
         viewController.view.addSubview(view)
-        viewController.view.frame = CGRect(origin: .zero, size: kGADAdSizeSmartBannerPortrait.size)
+        viewController.view.frame = CGRect(origin: .zero, size: GADAdSizeBanner.size)
         requestIDFA()
         view.load(GADRequest())
 

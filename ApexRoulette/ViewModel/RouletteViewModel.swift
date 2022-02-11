@@ -49,105 +49,99 @@ public class RouletteViewModel : ObservableObject  {
     
     
     func startGame() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) { [self] in
-            if locationSwitch {
-                switch(mapChoice){
-                case "OLYMPUS":
-                    dropZoneString = getRandom(array: model.OLYMPUS)
-                    break;
-                    
-                case "WORLD'S EDGE":
-                    dropZoneString = getRandom(array: model.WORLDS_EDGE)
-                    break;
-                case "Kings Canyon":
-                    dropZoneString = getRandom(array: model.KINGS_CANYON)
-                    break
-                case "Storm Point":
-                    dropZoneString = getRandom(array: model.STORM_POINT)
-                    break
-                    
-                default:
-                    dropZoneString = ""
-                }
+        if locationSwitch {
+            switch(mapChoice){
+            case "OLYMPUS":
+                dropZoneString = getRandom(array: model.OLYMPUS)
+                break;
                 
-            } else {
+            case "WORLD'S EDGE":
+                dropZoneString = getRandom(array: model.WORLDS_EDGE)
+                break;
+            case "Kings Canyon":
+                dropZoneString = getRandom(array: model.KINGS_CANYON)
+                break
+            case "Storm Point":
+                dropZoneString = getRandom(array: model.STORM_POINT)
+                break
+                
+            default:
                 dropZoneString = ""
             }
             
-            if weaponSwitch {
-                weaponsString = getRandom(array: model.WEAPONS)
-            } else {
-                weaponsString = ""
-            }
-            
-            if medicalsSwitch {
-                medString = getRandom(array: model.MEDICALS)
-            } else {
-                medString = ""
-            }
-            
-            if gearSwitch {
-                gearString = getRandom(array: model.GEAR)
-            } else {
-                gearString = ""
-            }
-            
-            if legendSwitch {
-                
-                // This will only fire if the user has paid
-                if starterLegends {
-                    var starter_one = getRandom(array: model.DEFAULT_LEGENDS)
-                    var starter_two = getRandom(array: model.DEFAULT_LEGENDS)
-                    var starter_three = getRandom(array: model.DEFAULT_LEGENDS)
-                    
-                    while starter_one == starter_two || starter_one == starter_three || starter_two == starter_three {
-                        starter_one = getRandom(array: model.DEFAULT_LEGENDS)
-                        starter_two = getRandom(array: model.DEFAULT_LEGENDS)
-                        starter_three = getRandom(array: model.DEFAULT_LEGENDS)
-                    }
-                    if duos {
-                        characterArray = [starter_one, starter_two]
-                        legendString = characterArray.joined(separator: ", ")
-                    } else {
-                        characterArray = [starter_one,starter_two,starter_three]
-                        legendString = characterArray.joined(separator: ", ")
-                    }
-                    
-                } else {
-                    
-                    // This is the default free version
-                    var firstPos: String = getRandom(array: model.ALL_LEGENDS)
-                    var secPos: String = getRandom(array: model.ALL_LEGENDS)
-                    var thirdPos: String = getRandom(array: model.ALL_LEGENDS)
-                    
-                    while(firstPos == secPos || firstPos == thirdPos || secPos == thirdPos) {
-                        firstPos = getRandom(array: model.ALL_LEGENDS)
-                        secPos = getRandom(array: model.ALL_LEGENDS)
-                        thirdPos = getRandom(array: model.ALL_LEGENDS)
-                    }
-                    if duos {
-                        characterArray = [firstPos,secPos]
-                        legendString = characterArray.joined(separator: ", ")
-                    } else {
-                        characterArray = [firstPos,secPos,thirdPos]
-                        legendString = characterArray.joined(separator: ", ")
-                    }
-                }
-                
-            }else {
-                legendString = ""
-                characterArray = []
-            }
-            
-            
-            
-            if specialsSwitch {
-                specialString = getRandom(array: model.SPECIAL)
-            } else {
-                specialString = ""
-            }
+        } else {
+            dropZoneString = ""
         }
         
+        if weaponSwitch {
+            weaponsString = getRandom(array: model.WEAPONS)
+        } else {
+            weaponsString = ""
+        }
+        
+        if medicalsSwitch {
+            medString = getRandom(array: model.MEDICALS)
+        } else {
+            medString = ""
+        }
+        
+        if gearSwitch {
+            gearString = getRandom(array: model.GEAR)
+        } else {
+            gearString = ""
+        }
+        
+        if legendSwitch {
+            
+            // This will only fire if the user has paid
+            if starterLegends {
+                var starter_one = getRandom(array: model.DEFAULT_LEGENDS)
+                var starter_two = getRandom(array: model.DEFAULT_LEGENDS)
+                var starter_three = getRandom(array: model.DEFAULT_LEGENDS)
+                
+                while starter_one == starter_two || starter_one == starter_three || starter_two == starter_three {
+                    starter_one = getRandom(array: model.DEFAULT_LEGENDS)
+                    starter_two = getRandom(array: model.DEFAULT_LEGENDS)
+                    starter_three = getRandom(array: model.DEFAULT_LEGENDS)
+                }
+                if duos {
+                    characterArray = [starter_one, starter_two]
+                    legendString = characterArray.joined(separator: ", ")
+                } else {
+                    characterArray = [starter_one,starter_two,starter_three]
+                    legendString = characterArray.joined(separator: ", ")
+                }
+                
+            } else {
+                
+                // This is the default free version
+                var firstPos: String = getRandom(array: model.ALL_LEGENDS)
+                var secPos: String = getRandom(array: model.ALL_LEGENDS)
+                var thirdPos: String = getRandom(array: model.ALL_LEGENDS)
+                
+                while(firstPos == secPos || firstPos == thirdPos || secPos == thirdPos) {
+                    firstPos = getRandom(array: model.ALL_LEGENDS)
+                    secPos = getRandom(array: model.ALL_LEGENDS)
+                    thirdPos = getRandom(array: model.ALL_LEGENDS)
+                }
+                if duos {
+                    characterArray = [firstPos,secPos]
+                    legendString = characterArray.joined(separator: ", ")
+                } else {
+                    characterArray = [firstPos,secPos,thirdPos]
+                    legendString = characterArray.joined(separator: ", ")
+                }
+            }
+            
+        }else {
+            legendString = ""
+            characterArray = []
+        }
+        if specialsSwitch {
+            specialString = getRandom(array: model.SPECIAL)
+        } else {
+            specialString = ""
+        }
     }
     
     private func getRandom( array: [String] )-> String {

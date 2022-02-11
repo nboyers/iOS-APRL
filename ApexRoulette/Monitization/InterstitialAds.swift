@@ -55,7 +55,7 @@ final class Interstitial: GADInterstitialAd, GADFullScreenContentDelegate {
         print("Ad did dismiss full screen content.")
     }
     func showAd(_ sender: Any){
-        let root = UIApplication.shared.windows.first?.rootViewController
+        let root = UIApplication.shared.windows.first!.rootViewController
         
         if interstitial != nil {
             interstitial!.present(fromRootViewController: root!)

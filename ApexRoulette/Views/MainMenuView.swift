@@ -148,7 +148,11 @@ struct CompleteView: View {
 
 struct MainMenuView_Previews: PreviewProvider {
     static var previews: some View {
-        MainMenuView()
+        Group {
+            MainMenuView()
+            MainMenuView()
+.previewInterfaceOrientation(.portraitUpsideDown)
+        }
     }
 }
 
