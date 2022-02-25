@@ -88,17 +88,19 @@ struct GameView: View {
 
 struct ButtonsGroup: View {
     @ObservedObject var viewModel: RouletteViewModel
-    @StateObject var adViewmodel = Store()
+    @StateObject var store = Store()
     @State var showIntersitialAd : Bool = false
     var IA = Interstitial()
     var body: some View {
         let adLuck = Int.random(in: 0...4)
         Group {
             Button(action: {
-                viewModel.resetButton()
-                if adLuck == 2  {
-                    IA.showAd(self)
+                if store.purchasedID.isEmpty {
+                    if adLuck == 2  {
+                        IA.showAd(self)
+                    }
                 }
+                viewModel.resetButton()
                 
             }, label: {
                 Text("RESET")
@@ -113,7 +115,7 @@ struct ButtonsGroup: View {
             
             Spacer().frame(height: 30)
             
-
+            
             Button("RANDOMIZER") {
                 viewModel.startGame()
             }

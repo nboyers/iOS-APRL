@@ -30,7 +30,7 @@ struct Gamemodel {
     
     let ALL_LEGENDS: [String] = ["Bloodhound","Pathfinder","Bangalore", "Caustic","Crypto",
                                  "Fuse", "Gibraltar", "Horizon", "Lifeline","Loba", "Mirage", "Octane", "Rampart", "Revenant",
-                                 "Wattson", "Wraith","Seer","Mad Maggie"]
+                                 "Wattson", "Wraith","Seer","Mad Maggie","Ash"]
     
     let DEFAULT_LEGENDS: [String] = ["Bloodhound","Pathfinder","Bangalore","Lifeline","Wraith","Gibraltar"]
     
