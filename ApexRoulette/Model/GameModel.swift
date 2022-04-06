@@ -66,7 +66,13 @@ struct Gamemodel {
                              "When the zone doesn't move, you don't",
                              "You must go to the center of the circle as fast as you can every time the circle shrinks." +
                              " you have to find new armor to replace it.",
-                             "Hipfire only.","Too late for peace! Don't use the Peacekeeper"]
+                             "Hipfire only.","Too late for peace! Don't use the Peacekeeper"
+                             ,"choose a biome at the start of the game. You're not allowed to leave that biome for as long as the ring allows it",
+                             "At the beginning fo the match choose who's first, second and third. Whoever is first is the only person allowed to fight others. When they go down it moves to the second person only being able to fight, then the third. Then rotates if you all survive or revived",
+                             "No jumping at all. Wait until your are kicked out of the ship and drop straight down.",
+                             "You must play a different legend each game until you can't do so",
+                             "If you go down, that's it. No being picked up or revived.",
+                             ""]
     
     let OLYMPUS: [String] = ["Oasis" , "Turbine" , "Power Grid" , "Energy Depot" ,
                              "Hammond Labs" , "Grow Towers" , "Gardens" , "Rift" , "Far-Left of Phase Runner" ,
