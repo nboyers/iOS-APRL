@@ -49,9 +49,12 @@ struct MainMenuView: View {
                     }))
                 .gesture(drag)
             }
-        }.fullSwipePop(show: $showPop){
+        }        .fullSwipePop(show: $showPop){
             GameView(viewModel: RouletteViewModel
-                        .init(MAP: map,DUO: duo, STARTERS: starter))
+                .init(MAP: map,DUO: duo, STARTERS: starter))
+        }
+        .onAppear {
+            AppReviewRequest.reviewRequestIfNeeded()
         }
     }
 }
@@ -101,13 +104,13 @@ struct CompleteView: View {
                                 
                             }
                             .frame(maxWidth: 200)
-                                .font(Font.custom("blocktastic", size: 25))
-                                .padding()
-                                .foregroundColor(.white)
-                                .overlay(RoundedRectangle(cornerRadius: 25)
-                                            .stroke(Color.white, lineWidth: 3))
+                            .font(Font.custom("blocktastic", size: 25))
+                            .padding()
+                            .foregroundColor(.white)
+                            .overlay(RoundedRectangle(cornerRadius: 25)
+                                .stroke(Color.white, lineWidth: 3))
                         }
-            
+                        
                         VStack {
                             Group {
                                 Button(action: {
@@ -129,7 +132,7 @@ struct CompleteView: View {
                                 .padding()
                                 .foregroundColor(.white)
                                 .overlay(RoundedRectangle(cornerRadius: 25)
-                                            .stroke(Color.white, lineWidth: 3))
+                                    .stroke(Color.white, lineWidth: 3))
                         }
                     }
                     //Final Spacer at the bottom
@@ -138,9 +141,9 @@ struct CompleteView: View {
                     
                 }
             }.background(Image("main_menu")
-                            .resizable()
-                            .ignoresSafeArea()
-                            .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
+                .resizable()
+                .ignoresSafeArea()
+                .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
         }
     }
     
@@ -151,7 +154,7 @@ struct MainMenuView_Previews: PreviewProvider {
         Group {
             MainMenuView()
             MainMenuView()
-.previewInterfaceOrientation(.portraitUpsideDown)
+                .previewInterfaceOrientation(.portraitUpsideDown)
         }
     }
 }
